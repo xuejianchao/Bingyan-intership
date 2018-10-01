@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>on boarding</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #showboard {
+      width: 100%;
+    }
+
+    .hiddenPic {
+      display: none;
+    }
+
+    .PicContainer {
+      width: 100%;
+      height: 0px;
+      padding-bottom: 100%;
+      overflow: hidden;
+      margin: 0;
+      position: relative;
+      border-radius: inherit;
+    }
+
+    .leftPic {
+      position: fixed;
+      left: -81.3%;
+      top: 30px;
+      width: 84%;
+      /* 上设置占屏幕百分比 */
+      border-radius: 10px;
+      transition: 0.5s;
+    }
+
+    /*  */
+    .rightPic {
+      position: fixed;
+      right: -81.3%;
+      top: 30px;
+      width: 84%;
+      border-radius: 10px;
+      transition: 0.5s;
+    }
+
+    /*  */
+    .centerPic {
+      width: 89%;
+      position: fixed;
+      top: 20px;
+      left: 5.5%;
+      border-radius: 15px;
+      transition: 0.5s;
+    }
+
+    img {
+      position: absolute;
+      /* 得加上这一行要不就被父元素的padding挤出去了 */
+      max-width: 100%;
+      min-width: 100%;
+      height: 100%
+    }
+
+    .smallerimg {
+      opacity: 0.7;
+      transition: opacity 1s ease-in-out;
+    }
+
+    ul li {
+      list-style: none;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="showboard">
+    <ul>
+      <li id="firstLi" class="leftPic">
+        <div class="PicContainer"><img class="smallerimg" src="../images/th (1).png"></div>
+      </li>
+      <li id="secondLi" class="centerPic">
+        <div class="PicContainer"><img src="../images/th (2).png"></div>
+      </li>
+      <li id="thirdLi" class="rightPic">
+        <div class="PicContainer"><img src="../images/th (3).png"></div>
+      </li>
+      <li id="fouthLi" class="hiddenPic">
+        <div class="PicContainer"><img class="smallerimg" src="../images/th (4).png"></div>
+      </li>
+      <li id="fifthLi" class="hiddenPic">
+        <div class="PicContainer"><img src="../images/th (5).png"></div>
+      </li>
+    </ul>
+
+    <button id="fortest">动一下</button>
+
+
+    <div class="info">
+      <h2 class="title"></h2>
+      <p class="detialinfo"></p>
+    </div>
+  </section>
+
+  <script>
+    //首先看一下动效,不考虑图片的排序
+    //单纯这样是不行的,首先静态动效不过关,其次手指滑动有一个过程,中间可以停止然后返回原装,这个也做不道.
+    var centerli = document.querySelector('.centerPic');
+    var centerimg = document.querySelector('.centerPic img');
+
+    var leftli = document.querySelector('.leftPic');
+    var leftimg = document.querySelector('.leftPic img');
+
+    var rightli = document.querySelector('.rightPic');
+    var rightimg = document.querySelector('.rightPic img');
+
+    var body = document.querySelector('body');
+    var touchEvent = null;
+    var initCood = {
+      x: undefined,
+      y: undefined
+    };
+
+    body.addEventListener('touchstart', handleStart);
+    body.addEventListener('touchmove', handleMove);
+    body.addEventListener('touchend', handleEnd);
+
+    function handleStart(event) {
+      touchEvent = event.changedTouches[0];
+      console.log(touchEvent);
+      initCood.x = touchEvent.clientX;
+      initCood.y = touchEvent.clientY;
+    }
+
+    function handleMove(event){
+      var dealt_x = touchEvent.clientX-initCood.x;
+      var dealt_y = touchEvent.clientY-initCood.y;
+      console.log(event.changedTouches[0].clientX,event.changedTouches[0].clientY);
+      
+      
+    }
+  </script>
+
+</body>
+
+</html>
