@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link href="../css/html-font-color.css" rel="stylesheet">
+  <link href="../css/component.css" rel="stylesheet">
+  <title>主页</title>
+  <style>
+    body {
+      background-color: #fafafa
+    }
+
+    #deliverySec {
+      margin: 21.6px 5.3% 0px;
+    }
+
+    #deliLable {
+      color: '#f34949';
+      font-size: 0.625em;
+      line-height: 1.2em;
+    }
+
+    #cityInfo {
+      color: "#3b3b3b";
+      font-size: 1em;
+      line-height: 1.1875em;
+      padding-top: 0.3125em;
+    }
+
+    #addressImg {
+      width: 1em;
+      height: 1em;
+    }
+
+    #deLiMan-warp {
+      float: right;
+      height: 1.875em;
+      width: 1.875em;
+      margin: 0.1875em 0;
+      border-radius: 50%;
+    }
+
+    .img-contain {
+      width: 100%;
+      height: 0px;
+      padding-bottom: 100%;
+      overflow: hidden;
+      margin: 0;
+      position: relative;
+      border-radius: inherit;
+    }
+
+    #deliMan {
+      position: absolute;
+      height: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+
+    /* 推荐部分 */
+    .SectionTitleGroup {
+      margin: .4rem .2rem 0px;
+    }
+
+    .headTitle {
+      margin-bottom: 0.05rem;
+    }
+
+    .viewAll {
+      float: right;
+    }
+
+    .viewall:visited {
+      color: #F34949;
+      text-decoration: none;
+    }
+
+    #recommendCard {
+      box-sizing: border-box;
+      width: 89.3%;
+      border-radius: .1rem;
+      margin: .2rem .2rem;
+      padding: .2rem;
+      background-color: #ffffff;
+    }
+
+    #recommendImg-warp {
+      width: 100%;
+      margin-bottom: .2rem;
+      border-radius: .1rem;
+    }
+
+    img {
+      width: 100%;
+      border-radius: inherit;
+    }
+
+    .bigButton {
+      width: 100%;
+      height: .3rem;
+      text-align: center;
+      /* ↑父元素上设置这个,子元素中的inline就会水平居中 */
+      border: none;
+      border-radius: .08rem;
+    }
+
+    .greyButton {
+      background-color: #F8F8F8;
+      color: #3b3b3b;
+    }
+
+    .redButton {
+      background-color: #F34949;
+      color: #FFFFFF;
+      margin-top: .1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="deliverySec">
+    <div id="deLiMan-warp">
+      <div class="img-contain">
+        <img id="deliMan" src="../images/th (1).png">
+      </div>
+    </div>
+
+    <div id="deliLable">
+      <img id="addressImg" src="../images/address.png"> adfasdf
+    </div>
+    <p id="cityInfo">asdfasdfa</p>
+
+  </section>
+
+  <section class="SectionTitleGroup">
+    <h4 class="viewAll"><a href="#" class="red">view all</a></h4>
+    <h1 class="headTitle">Recommend</h1>
+    <h5 class="gray">Based on your purchase history</h5>
+  </section>
+
+  <section id="recommendCard">
+    <div id="recommendImg-warp">
+      <img src="../images/recommendImg.jpg" alt="the recommend food's images">
+    </div>
+
+    <h2>Veggie Cheese Extravaganza</h2>
+    <div class="starGroup">
+      <span class="red">★</span>
+      <span class="red">★</span>
+      <span class="red">★</span>
+      <span class="red">★</span>
+      <span class="gray">★</span>
+    </div>
+
+    <div class="boxGroup">
+      <div class="Box activeBox">
+        <span class="h6 formerLable activeLable">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+    </div>
+
+    <button class="bigButton greyButton">Customize & Add</button>
+    <button class="bigButton redButton">Add to Cart</button>
+
+  </section>
+
+  <section class="SectionTitleGroup">
+    <h4 class="viewAll"><a href="./menu.html" class="red">view all</a></h4>
+    <h1 class="headTitle">Menu</h1>
+    <h5 class="gray">What's on our menu</h5>
+  </section>
+
+</body>
+
+</html>

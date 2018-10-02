@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link href="../css/html-font-color.css" rel="stylesheet">
+  <link href="../css/component.css" rel="stylesheet">
+  <title>someFood</title>
+  <style>
+    body{
+      padding:.2rem;
+    }
+
+    .imgContainer {
+      width: 100%;
+      height: 0px;
+      padding-bottom: 100%;
+      position: relative;
+      border-radius: 0.1rem;
+    }
+
+    .detailImg {
+      border-radius: 0 0 .12rem .12rem;
+    }
+
+    .foodTitle{
+      margin-top:.2rem;
+    }
+
+    img {
+      border-radius: inherit;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .detail {
+      margin: 0.2rem 0;
+      line-height: 0.22rem;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="imgContainer detailImg"><img src="../images/th (2).png" alt=""></div>
+  <!-- 我需要让图片忽略body的padding] -->
+  
+  <h2 class="foodTitle">Veggie Cheese Extravaganza</h2>
+  <div class="starGroup">
+    <span class="red">★</span>
+    <span class="red">★</span>
+    <span class="red">★</span>
+    <span class="red">★</span>
+    <span class="gray">★</span>
+  </div>
+
+  <h5 class="detail gray">For a vegetarian looking for a BIG treat
+    that goes easy on the spices, this one's
+    got it all.. The onions, the capsicum, those
+    delectable mushrooms - with paneer and
+    golden corn to top it all.</h5>
+
+  <div class="some">
+    <h4>Size</h4>
+    <div class="boxGroup">
+        <div class="Box activeBox">
+          <span class="h6 formerLable activeLable">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </div>
+        <div class="Box">
+          <span class="h6 formerLable gray">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </div>
+        <div class="Box">
+          <span class="h6 formerLable gray">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </div>
+      </div>
+  </div>
+
+</body>
+
+</html>
