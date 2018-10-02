@@ -17,9 +17,9 @@
     }
 
     #deliLable {
-      color: '#f34949';
-      font-size: 0.625em;
-      line-height: 1.2em;
+      display: inline-block;
+      width: 0.12rem;
+      height: 0.1rem;
     }
 
     #cityInfo {
@@ -29,35 +29,13 @@
       padding-top: 0.3125em;
     }
 
-    #addressImg {
-      width: 1em;
-      height: 1em;
-    }
-
     #deLiMan-warp {
       float: right;
-      height: 1.875em;
-      width: 1.875em;
+      height: .2rem;
+      width: .2rem;
       margin: 0.1875em 0;
-      border-radius: 50%;
     }
 
-    .img-contain {
-      width: 100%;
-      height: 0px;
-      padding-bottom: 100%;
-      overflow: hidden;
-      margin: 0;
-      position: relative;
-      border-radius: inherit;
-    }
-
-    #deliMan {
-      position: absolute;
-      height: 100%;
-      max-width: 100%;
-      min-width: 100%;
-    }
 
 
     /* 推荐部分 */
@@ -93,11 +71,6 @@
       border-radius: .1rem;
     }
 
-    img {
-      width: 100%;
-      border-radius: inherit;
-    }
-
     .bigButton {
       width: 100%;
       height: .3rem;
@@ -123,13 +96,20 @@
 <body>
   <section id="deliverySec">
     <div id="deLiMan-warp">
-      <div class="img-contain">
-        <img id="deliMan" src="../images/th (1).png">
+      <div class="imgContainer">
+        <img src="../images/th (1).png">
       </div>
     </div>
 
-    <div id="deliLable">
-      <img id="addressImg" src="../images/address.png"> adfasdf
+    <div style="display:flex; align-items:center">
+      <div id="deliLable">
+        <div class="imgContainer">
+          <img id="addressImg" src="../images/address.png">
+        </div>
+      </div>
+      <h6 class="red" style="display: inline-block">
+        DELIVERY
+      </h6>
     </div>
     <p id="cityInfo">asdfasdfa</p>
 
@@ -143,7 +123,9 @@
 
   <section id="recommendCard">
     <div id="recommendImg-warp">
-      <img src="../images/recommendImg.jpg" alt="the recommend food's images">
+      <div class="imgContainer">
+        <img src="../images/recommendImg.jpg" alt="the recommend food's images">
+      </div>
     </div>
 
     <h2>Veggie Cheese Extravaganza</h2>
@@ -180,6 +162,8 @@
     <h1 class="headTitle">Menu</h1>
     <h5 class="gray">What's on our menu</h5>
   </section>
+
+  <script src="../javascript/common.js"></script>
 
 </body>
 
