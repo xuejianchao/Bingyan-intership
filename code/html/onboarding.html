@@ -4,16 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link href="../css/html-font-color.css" rel="stylesheet">
+  <link href="../css/component.css" rel="stylesheet">
   <title>on boarding</title>
 
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
     #showboard {
       width: 100%;
+      padding-bottom: 100%;
+      /* ↑用来占位,保证图片下面的内容不会窜上来 */
     }
 
     .hiddenPic {
@@ -76,7 +75,26 @@
     ul li {
       list-style: none;
     }
+
+    .infoUnderImg {
+      font-size: 0.12rem;
+      line-height: 0.18rem;
+      margin:.1rem .2rem .2rem;
+    }
+
+    button {
+      height: .3rem;
+      width: 2.15rem;
+      margin: 0 .8rem;
+
+    }
+
+    #QQButton {
+      margin-bottom: 15px;
+    }
   </style>
+
+
 </head>
 
 <body>
@@ -99,14 +117,31 @@
       </li>
     </ul>
 
-    <button id="fortest">动一下</button>
-
-
-    <div class="info">
-      <h2 class="title"></h2>
-      <p class="detialinfo"></p>
-    </div>
+    <!-- <button id="fortest">动一下</button> -->
   </section>
+
+  <h1 style="text-align: center">Soft & Crispy</h1>
+  <p class="infoUnderImg  gray">Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus,
+    scelerisque nec pharetra id,
+    tempor a tortor. Pellentesque non dignissim neque. </p>
+
+
+
+  <button class="background-blue" id="QQButton">
+    <h5 class="white">QQ登录</h5>
+  </button>
+  <button class="background-green">
+    <h5 class="white">微信登录</h5>
+  </button>
+  <h6 style="color:'#929292';margin:.1rem auto;text-align: center">或</h6>
+  <button class="background-lightGray">
+    <h5>手机注册</h5>
+  </button>
+  <h5 class="gray" style="margin:.2rem auto;text-align: center">已经有账户了? <a href="#" class="red">立刻登录</a></h5>
+
+
+
+  <script src="../javascript/common.js"></script>
 
   <script>
     //首先看一下动效,不考虑图片的排序

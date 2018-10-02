@@ -68,6 +68,25 @@ h6 {
 .black{
   color: #3b3b3b;
 }
+.white{
+  color: #ffffff;
+}
+
+.background-blue{
+  background-color: #10aeff;
+}
+
+.background-red{
+  background-color: #F34949;
+}
+
+.background-lightGray{
+  background-color:#f8f8f8;
+}
+
+.background-green{
+  background-color:#2BA245;
+}
 
 a{
   text-decoration: none;

@@ -8,25 +8,39 @@
   <link href="../css/component.css" rel="stylesheet">
   <title>someFood</title>
   <style>
-    body{
-      padding:.2rem;
+    body {
+      padding: .2rem;
     }
 
-    
+
 
     .detailImg {
       border-radius: 0 0 .12rem .12rem;
     }
 
-    .foodTitle{
-      margin-top:.2rem;
+    .foodTitle {
+      margin-top: .2rem;
     }
 
-    
+
 
     .detail {
       margin: 0.2rem 0;
       line-height: 0.22rem;
+    }
+
+    .boxGroup {
+      margin: .1rem 0 .2rem;
+    }
+
+    button{
+      font-size:.12rem;
+      line-height: .3rem;
+
+      height:.3rem;
+      width:100%;
+      margin:.1rem 0 .2rem;
+      /* wemm先设置margin,然后就限制住了margin */
     }
   </style>
 
@@ -35,7 +49,7 @@
 <body>
   <div class="imgContainer detailImg"><img src="../images/th (2).png" alt=""></div>
   <!-- 我需要让图片忽略body的padding] -->
-  
+
   <h2 class="foodTitle">Veggie Cheese Extravaganza</h2>
   <div class="starGroup">
     <span class="red">★</span>
@@ -54,20 +68,58 @@
   <div class="some">
     <h4>Size</h4>
     <div class="boxGroup">
-        <div class="Box activeBox">
-          <span class="h6 formerLable activeLable">Medium</span>
-          <span class="h6 laterLable">₹450</span>
-        </div>
-        <div class="Box">
-          <span class="h6 formerLable gray">Medium</span>
-          <span class="h6 laterLable">₹450</span>
-        </div>
-        <div class="Box">
-          <span class="h6 formerLable gray">Medium</span>
-          <span class="h6 laterLable">₹450</span>
-        </div>
+      <div class="Box activeBox">
+        <span class="h6 formerLable activeLable">Medium</span>
+        <span class="h6 laterLable">₹450</span>
       </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+    </div>
   </div>
+
+  <div class="some">
+    <h4>Size</h4>
+    <div class="boxGroup">
+      <div class="Box activeBox">
+        <span class="h6 formerLable activeLable">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="some">
+    <h4>Size</h4>
+    <div class="boxGroup">
+      <div class="Box activeBox">
+        <span class="h6 formerLable activeLable">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+      <div class="Box">
+        <span class="h6 formerLable gray">Medium</span>
+        <span class="h6 laterLable">₹450</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="white background-red">添加到购物车</button>
 
   <script src="../javascript/common.js"></script>
 </body>
