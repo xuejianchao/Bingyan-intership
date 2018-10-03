@@ -18,22 +18,21 @@
 
     #deliLable {
       display: inline-block;
-      width: 0.12rem;
+      width: 0.07rem;
       height: 0.1rem;
+      margin-right: 0.05rem;
     }
 
-    #cityInfo {
-      color: #3b3b3b;
-      font-size: 1em;
-      line-height: 1.1875em;
-      padding-top: 0.3125em;
+    #cityInfo{
+      padding-top:0.05rem;
     }
 
     #deLiMan-warp {
       float: right;
-      height: .2rem;
-      width: .2rem;
-      margin: 0.1875em 0;
+      height: .25rem;
+      width: .25rem;
+      margin: .03rem 0;
+      border-radius: .125rem;
     }
 
 
@@ -92,9 +91,10 @@
       </div>
     </div>
 
-    <div style="display:flex; align-items:center">
+    <!-- <div style="display:inline-block; vertical-align: middle"> -->
+    <div style="display:flex; justify-content: start">
       <div id="deliLable">
-        <div class="imgContainer">
+        <div class="imgContainer" style="padding-bottom: 155%">
           <img id="addressImg" src="../images/address.png">
         </div>
       </div>
@@ -102,7 +102,7 @@
         DELIVERY
       </h6>
     </div>
-    <p id="cityInfo">asdfasdfa</p>
+    <h3 id="cityInfo">asdfasdfa</h3>
 
   </section>
 

@@ -3,7 +3,7 @@ body{
 }
 #showboard {
   width: 100%;
-  padding-bottom: 100%;
+  padding-bottom: 140%;
   /* ↑用来占位,保证图片下面的内容不会窜上来 */
 }
 
@@ -55,10 +55,16 @@ ul li {
   }
 }
 
+.titleUnderImg{
+  margin:.2rem auto .1rem;
+  text-align:center;
+}
+
 .infoUnderImg {
   font-size: 0.12rem;
   line-height: 0.18rem;
   margin: .1rem .2rem .2rem;
+  text-align: center;
 }
 
 button {

@@ -1,0 +1,76 @@
+header {
+  position: relative;
+  text-align: center;
+  margin-top: .2rem;
+}
+
+.backToHomeButtonWarpper {
+  position: absolute;
+  left: .2rem;
+  top: .05rem;
+}
+
+.backToHomeButton {
+  position: relative;
+  float:left;
+  height: .14rem;
+  width: .21rem;
+  margin-left: .2rem;
+  margin-top: .05rem;
+}
+
+a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#MenuTitle {
+  clear:both;
+  display: inline;
+}
+
+@media screen and (max-width:450px) {
+
+  /* 目标是大部分手机de竖屏 */
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 6.7%;
+    margin: .2rem;
+  }
+
+  .imgContainer {
+    width: 100%;
+    height: 0px;
+    padding-bottom: 100%;
+    position: relative;
+    border-radius: 0.1rem;
+  }
+
+  img {
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .foodTextInfo {
+    margin-top: 0.15rem;
+  }
+
+
+  #one-one {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #two-two {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}

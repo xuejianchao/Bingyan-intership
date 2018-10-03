@@ -169,11 +169,14 @@ PicSlide.prototype.backtoPlace = function () {
     self.setX(curr, 0.2, 'rem');
     self.setX(prev, -3.25, 'rem');
     self.setX(next, 3.65, 'rem');
-  }, 300);
+  }, 500);
+  //注意,看起来应该是任务被放进事件处理队列之后几乎立刻就被执行了
+  //所以settimeout的时间应该和动画的时间一样
+  //多出来的时间好像还能造成一种缓入的效果
 }
 
 PicSlide.prototype.next = function () {
-  
+  //切换到下一个图片
   var self = this;
   var curr = this.getCurrent();
   var prev = this.getPrev();
@@ -182,6 +185,7 @@ PicSlide.prototype.next = function () {
 
   curr.classList.add('toLeft');
   next.classList.add('toCenter');
+  this.setX(nextnext, 4.15, 'rem'); 
   nextnext.classList.add('toRight');
   this.setX(prev, 3.75, 'rem');
 
@@ -196,7 +200,7 @@ PicSlide.prototype.next = function () {
     self.setX(curr, -3.25, 'rem');
     self.setX(nextnext, 3.65, 'rem');
     self.setX(next, 0.2, 'rem');
-  }, 300);
+  }, 500);
 }
 
 PicSlide.prototype.prev = function () {
@@ -208,6 +212,10 @@ PicSlide.prototype.prev = function () {
 
   curr.classList.add('toRight');
   prev.classList.add('toCenter');
+  this.setX(prevprev, -3.75, 'rem'); 
+  //↑先把图片移动到屏幕左侧外面,这样从右侧移动到左侧的过程就不算在动画中了
+  //而且因为移动之后,图片右侧离屏幕左侧还有一点距离,所以prevprev和prev刚好能同时停止动作
+  //太投机取巧了,而且不同尺寸不好复用
   prevprev.classList.add('toLeft');
   this.setX(next, 3.75, 'rem');
 
@@ -223,7 +231,8 @@ PicSlide.prototype.prev = function () {
     self.setX(curr, 3.65, 'rem');
     self.setX(prev, 0.2, 'rem');
     self.setX(prevprev, -3.25, 'rem');
-  }, 300);
+    //上
+  }, 500);
 
 }
 PicSlide.prototype.setX = function (el, x, unit) {
