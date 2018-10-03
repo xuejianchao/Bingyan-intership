@@ -1,0 +1,73 @@
+body{
+  overflow-x: hidden;
+}
+#showboard {
+  width: 100%;
+  padding-bottom: 100%;
+  /* ↑用来占位,保证图片下面的内容不会窜上来 */
+}
+
+.pics {
+  width: 100%;
+  position: relative;
+}
+
+.pic {
+  width: 3.35rem;
+  height: 3.35rem;
+  border-radius: 0.08rem;
+  position: absolute;
+  top: .2rem;
+  left: 0rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+.toLeft{
+  animation:movetoLeft 0.5s ease 1 both;
+}
+
+@keyframes movetoLeft{
+  to{
+    transform: translate(-3.25rem,0);
+  }
+}
+
+.toCenter{
+  animation:movetoCenter 0.5s ease 1 both;
+}
+
+@keyframes movetoCenter{
+  to{
+    transform: translate(0.2rem,0);
+  }
+}
+
+.toRight{
+  animation:movetoRight 0.5s ease 1 both;
+}
+
+@keyframes movetoRight{
+  to{
+    transform: translate(3.65rem,0);
+  }
+}
+
+.infoUnderImg {
+  font-size: 0.12rem;
+  line-height: 0.18rem;
+  margin: .1rem .2rem .2rem;
+}
+
+button {
+  height: .3rem;
+  width: 2.15rem;
+  margin: 0 .8rem;
+
+}
+
+#QQButton {
+  margin-bottom: 15px;
+}

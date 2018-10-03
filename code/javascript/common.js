@@ -3,7 +3,7 @@
 // 使之保持font-size = 100*(变化后的宽度/变化前的宽度)
 (function(doc,win){
   var docEI = doc.documentElement,
-  resizeEvt = 'orientationchange' in window?'orientataionchange':'resize',
+  resizeEvt = 'orientationchange' in window?'orientataionchange':'resize',//是两个事件选其一么?
   recalc = function(){
       var clientWidth = docEI.clientWidth;
       if(!clientWidth) return;
