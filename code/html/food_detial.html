@@ -8,7 +8,7 @@
   <link href="../css/component.css" rel="stylesheet">
   <link href="../css/fooddetial.css" rel="stylesheet">
   <title>someFood</title>
-  
+
 
 </head>
 
@@ -19,13 +19,15 @@
   <div class="imgContainer detailImg"><img src="../images/th (2).png" alt=""></div>
   <!-- 我需要让图片忽略body的padding] -->
 
-  <h2 class="foodTitle">Veggie Cheese Extravaganza</h2>
-  <div class="starGroup">
-    <span class="red">★</span>
-    <span class="red">★</span>
-    <span class="red">★</span>
-    <span class="red">★</span>
-    <span class="gray">★</span>
+  <div id="nameAndStar">
+    <h2 class="foodTitle">Veggie Cheese Extravaganza</h2>
+    <div class="starGroup">
+      <span class="red">★</span>
+      <span class="red">★</span>
+      <span class="red">★</span>
+      <span class="red">★</span>
+      <span class="gray">★</span>
+    </div>
   </div>
 
   <h5 class="detail gray">For a vegetarian looking for a BIG treat
@@ -34,61 +36,92 @@
     delectable mushrooms - with paneer and
     golden corn to top it all.</h5>
 
-  <div class="some">
+
+  <form action="#" method="POST">
     <h4>Size</h4>
     <div class="boxGroup">
-      <div class="Box activeBox">
-        <span class="h6 formerLable activeLable">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+      <div class="outerBox">
+        <input id="size1" name="size" type="radio" checked>
+        <label class="Box" for="size1">
+          <span class="h6 formerLable">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </label>
       </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+
+      <div class="outerBox">
+        <input id="size2" name="size" type="radio">
+        <label class="Box" for="size2">
+          <span class="h6 formerLable">Large</span>
+          <span class="h6 laterLable">₹990</span>
+        </label>
       </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+
+      <div class="outerBox">
+        <input id="size3" name="size" type="radio">
+        <label class="Box" for="size3">
+          <span class="h6 formerLable">234</span>
+          <span class="h6 laterLable">₹199</span>
+        </label>
       </div>
     </div>
-  </div>
 
-  <div class="some">
-    <h4>Size</h4>
+    <h4>Crust</h4>
     <div class="boxGroup">
-      <div class="Box activeBox">
-        <span class="h6 formerLable activeLable">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+      <div class="outerBox">
+        <input id="crust1" name="crust" type="radio" checked>
+        <label class="Box" for="crust1">
+          <span class="h6 formerLable">Stanard</span>
+          <span class="h6 laterLable"></span>
+        </label>
       </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+
+      <div class="outerBox">
+        <input id="crust2" name="crust" type="radio">
+        <label class="Box" for="crust2">
+          <span class="h6 formerLable">Garlic Roasted</span>
+          <span class="h6 laterLable">Free</span>
+        </label>
       </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+
+      <div class="outerBox">
+        <input id="crust3" name="crust" type="radio">
+        <label class="Box" for="crust3">
+          <span class="h6 formerLable">Cheese Burst</span>
+          <span class="h6 laterLable">Free</span>
+        </label>
       </div>
     </div>
-  </div>
 
-  <div class="some">
-    <h4>Size</h4>
+    <h4>Topping</h4>
     <div class="boxGroup">
-      <div class="Box activeBox">
-        <span class="h6 formerLable activeLable">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+      <div class="outerBox">
+        <input id="topping1" name="topping" type="radio" checked>
+        <label class="Box" for="topping1">
+          <span class="h6 formerLable">Stanard</span>
+          <span class="h6 laterLable"></span>
+        </label>
       </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+
+      <div class="outerBox">
+        <input id="topping2" name="topping" type="radio">
+        <label class="Box" for="topping2">
+          <span class="h6 formerLable">Extra Cheese</span>
+          <span class="h6 laterLable"></span>
+        </label>
       </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
+
+      <div class="outerBox">
+        <input id="topping3" name="topping" type="radio">
+        <label class="Box" for="topping3">
+          <span class="h6 formerLable">Extra Spice</span>
+          <span class="h6 laterLable"></span>
+        </label>
       </div>
     </div>
-  </div>
 
-  <button class="white background-red">Add to chart</button>
+    <input type="submit" class="bigButton white background-red redButton" value="Add to Cart">
+
+  </form>
 
   <script src="../javascript/common.js"></script>
 </body>

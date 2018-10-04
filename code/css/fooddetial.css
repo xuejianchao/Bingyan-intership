@@ -1,30 +1,12 @@
-.detailImg {
-  border-radius: 0 0 .12rem .12rem;
-}
-
-.foodTitle {
-  margin: .2rem .2rem 0;
-}
-
-.starGroup {
-  margin: 0 .2rem;
-
-}
-
-.detail {
-  margin: .2rem .2rem;
-  line-height: 0.22rem;
-}
-
-.some {
-  margin: 0 .2rem;
+h4 {
+  margin: 0 .2rem .1rem;
 }
 
 .boxGroup {
-  margin: .1rem 0 .2rem;
+  margin: .1rem .2rem .2rem;
 }
 
-button {
+input[type='submit'] {
   font-size: .12rem;
   line-height: .3rem;
 
@@ -32,4 +14,25 @@ button {
   width: 3.35rem;
   height: .3rem;
   /* wemm先设置margin,然后就限制住了margin`-  */
+}
+
+@media screen and (max-width : 767px) {
+  #nameAndStar {
+    margin: .2rem .2rem 0;
+  }
+
+  .detailImg {
+    border-radius: 0 0 .12rem .12rem;
+  }
+
+  .detail {
+    margin: .2rem .2rem;
+    line-height: 0.22rem;
+  }
+}
+
+@media screen and (min-width:768px){
+  body{
+    
+  }
 }

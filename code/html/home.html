@@ -56,23 +56,37 @@
         <span class="gray">★</span>
       </div>
 
-      <div class="boxGroup">
-        <div class="Box activeBox">
-          <span class="h6 formerLable activeLable">Medium</span>
-          <span class="h6 laterLable">₹450</span>
-        </div>
-        <div class="Box">
-          <span class="h6 formerLable gray">Medium</span>
-          <span class="h6 laterLable">₹450</span>
-        </div>
-        <div class="Box">
-          <span class="h6 formerLable gray">Medium</span>
-          <span class="h6 laterLable">₹450</span>
-        </div>
-      </div>
+      <form action="#">
+        <div class="boxGroup">
+          <div class="outerBox">
+            <input id="size1" name="size" type="radio" checked>
+            <label class="Box" for="size1">
+              <span class="h6 formerLable">Medium</span>
+              <span class="h6 laterLable">123</span>
+            </label>
+          </div>
 
-      <button class="bigButton black background-lightGray">Customize & Add</button>
-      <button class="bigButton white background-red redButton">Add to Cart</button>
+          <div class="outerBox">
+            <input id="size2" name="size" type="radio">
+            <label class="Box" for="size2">
+              <span class="h6 formerLable">Medium</span>
+              <span class="h6 laterLable">654</span>
+            </label>
+          </div>
+
+          <div class="outerBox">
+            <input id="size3" name="size" type="radio">
+            <label class="Box" for="size3">
+              <span class="h6 formerLable">234</span>
+              <span class="h6 laterLable">432</span>
+            </label>
+          </div>
+        </div>
+        <button class="bigButton black background-lightGray">Customize & Add</button>
+        <input type="submit" class="bigButton white background-red redButton" value="Add to Cart">
+
+      </form>
+
 
       <div id="docurateBox"></div>
     </section>

@@ -3,20 +3,72 @@
   height: .32rem;
   margin: .2rem 0;
   /* 上面的和模板上的不一样,不过我觉得这样更好看一些 */
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   overflow-y: hidden;
   white-space: nowrap;
 }
 
-.Box {
+.outerBox {
   height: .3rem;
   width: 32.83%;
+
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.Box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 真的需要么?↑ */
+
   border: 1px solid #DDDDDD;
   border-radius: .03rem;
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  /* ↑不加这一行的话,元素会下沉 */
+  width: 100%;
+  height: 100%;
+}
+
+input[type='radio'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 真的需要么?↑ */
+
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.formerLable {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  line-height: .3rem;
+  color: #ccc;
+}
+
+.laterLable {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  line-height: .3rem;
+}
+
+input:checked+label {
+  border: #F34949 1px solid;
+}
+
+input:checked+label>span.formerLable {
+  color: #F34949;
+}
+
+input:unchecked+label {
+  border: #ddd 1px solid;
+}
+
+input:unchecked+label>span.formerLable {
+  color: #ccc;
 }
 
 @media (min-width:768px) {
@@ -26,25 +78,10 @@
     justify-content: space-between;
   }
 
-  .Box {
-    width: 30%;
+  .outerBox {
+    width: 29%;
+    /* 项目数量改变的时候不太方便 */
   }
-}
-
-.activeBox {
-  border: #F34949 1px solid;
-}
-
-.formerLable {
-  padding-left: .1rem;
-  line-height: .3rem;
-}
-
-.laterLable {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  line-height: .3rem;
 }
 
 
@@ -83,6 +120,11 @@ img {
 }
 
 button {
+  border: none;
+  border-radius: 0.08rem;
+}
+
+input[type='submit'] {
   border: none;
   border-radius: 0.08rem;
 }
