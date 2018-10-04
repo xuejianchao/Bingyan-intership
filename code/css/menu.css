@@ -4,17 +4,10 @@ header {
   margin-top: .2rem;
 }
 
-.backToHomeButtonWarpper {
-  position: absolute;
-  left: .2rem;
-  top: .05rem;
-}
-
 .backToHomeButton {
   position: absolute;
   height: .14rem;
   width: .21rem;
-  left: .2rem;
   top: .05rem;
 }
 
@@ -26,45 +19,58 @@ a {
 }
 
 #MenuTitle {
-  clear:both;
+  clear: both;
   display: inline;
+}
+
+.imgContainer {
+  border-radius: 0.1rem;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.foodTextInfo {
+  margin-top: 0.15rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-gap: .2rem;
 }
 
 @media screen and (max-width:450px) {
 
   /* 目标是大部分手机de竖屏 */
   .gridContainer {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 6.7%;
     margin: .2rem;
   }
-
-  .imgContainer {
-    border-radius: 0.1rem;
+  .backToHomeButton {
+    left: .2rem;
   }
+}
 
-  img {
-    border-radius: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+@media screen and (min-width:451px) and (max-width:768px) {
+  .gridContainer {
+    margin: .2rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-
-  .foodTextInfo {
-    margin-top: 0.15rem;
+  .backToHomeButton {
+    left: .2rem;
   }
+}
 
-
-  #one-one {
-    grid-column: 1/2;
-    grid-row: 1/2;
+@media screen and (min-width:769px) {
+  .gridContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: .2rem .3rem;
   }
-
-  #two-two {
-    grid-column: 2/3;
-    grid-row: 1/2;
+  .backToHomeButton {
+    left: .3rem;
   }
 }
