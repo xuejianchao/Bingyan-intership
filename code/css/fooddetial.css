@@ -1,0 +1,35 @@
+.detailImg {
+  border-radius: 0 0 .12rem .12rem;
+}
+
+.foodTitle {
+  margin: .2rem .2rem 0;
+}
+
+.starGroup {
+  margin: 0 .2rem;
+
+}
+
+.detail {
+  margin: .2rem .2rem;
+  line-height: 0.22rem;
+}
+
+.some {
+  margin: 0 .2rem;
+}
+
+.boxGroup {
+  margin: .1rem 0 .2rem;
+}
+
+button {
+  font-size: .12rem;
+  line-height: .3rem;
+
+  margin: .1rem .2rem .2rem;
+  width: 3.35rem;
+  height: .3rem;
+  /* wemm先设置margin,然后就限制住了margin`-  */
+}

@@ -19,6 +19,18 @@
   /* ↑不加这一行的话,元素会下沉 */
 }
 
+@media (min-width:768px) {
+  .boxGroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Box {
+    width: 30%;
+  }
+}
+
 .activeBox {
   border: #F34949 1px solid;
 }
@@ -35,6 +47,9 @@
   line-height: .3rem;
 }
 
+
+
+
 /* 用来评分的星星 */
 .starGroup {
   font-size: 1.125em;
@@ -48,7 +63,7 @@ img {
   width: 100%;
 }
 
-.imgWithRatio{
+.imgWithRatio {
   /* 如果需要比例,就给img加上这个类 */
   /* 具体的比例用一个只包含图像的div规定 */
   height: 100%;
