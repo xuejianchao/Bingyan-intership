@@ -5,9 +5,15 @@
   var docEI = doc.documentElement,
   resizeEvt = 'orientationchange' in window?'orientataionchange':'resize',//是两个事件选其一么?
   recalc = function(){
-      var clientWidth = docEI.clientWidth;
-      if(!clientWidth) return;
-      docEI.style.fontSize = 100*(clientWidth/375)+'px';
+    var clientWidth = docEI.clientWidth;
+    if(!clientWidth) return;
+    var rootfontsize = 0;
+    if(window.innerWidth>=767){
+      rootfontsize = 50;
+    }else{
+      rootfontsize = 100;
+    }
+    docEI.style.fontSize = rootfontsize*(clientWidth/375)+'px';
   }
 
   if(!doc.addEventListener) return;

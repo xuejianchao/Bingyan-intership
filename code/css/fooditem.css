@@ -1,0 +1,20 @@
+/* 下面是fooditem的 */
+.foodItem .imgContainer {
+  border-radius: 0.1rem;
+}
+
+.menuGridContainer img ,.gridContainer img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.foodTextInfo {
+  margin-top: 0.15rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-gap: .2rem;
+}

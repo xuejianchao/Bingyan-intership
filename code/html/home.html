@@ -7,6 +7,7 @@
   <link href="../css/html-font-color.css" rel="stylesheet">
   <link href="../css/component.css" rel="stylesheet">
   <link href="../css/home.css" rel="stylesheet">
+  <link href="../css/fooditem.css" rel="stylesheet">
 
   <title>主页</title>
 
@@ -14,72 +15,129 @@
 </head>
 
 <body>
-  <section id="deliverySec">
-    <div id="deLiMan-warp">
-      <div class="imgContainer">
-        <img src="../images/th (1).png">
-      </div>
-    </div>
 
-    <!-- <div style="display:inline-block; vertical-align: middle"> -->
-    <div>
-      <div id="deliLable">
-        <img class="imgWithRatio" src="../images/address.png">
+  <section id="deliAndRecoSection">
+    <section id="deliverySec">
+      <div id="deLiMan-warp">
+        <div class="imgContainer">
+          <img src="../images/th (1).png">
+        </div>
       </div>
-      <h6 class="red" style="display: inline-block">
-        DELIVERY
-      </h6>
-    </div>
-    <h3 id="cityInfo">Bangalore, India</h3>
 
+      <!-- <div style="display:inline-block; vertical-align: middle"> -->
+      <div>
+        <div id="deliLable">
+          <img class="imgWithRatio" src="../images/address.png">
+        </div>
+        <h6 class="red" style="display: inline-block">
+          DELIVERY
+        </h6>
+      </div>
+      <h3 id="cityInfo">Bangalore, India</h3>
+
+    </section>
+
+    <section class="SectionTitleGroup">
+      <h4 class="viewAll"><a href="#" class="red">view all</a></h4>
+      <h1 class="headTitle">Recommend</h1>
+      <h5 class="gray">Based on your purchase history</h5>
+    </section>
+
+    <section id="recommendCard">
+
+      <img id="recommendImg" src="../images/recommendImg.jpg" alt="the recommend food's images">
+
+      <h2>Veggie Cheese Extravaganza</h2>
+      <div class="starGroup">
+        <span class="red">★</span>
+        <span class="red">★</span>
+        <span class="red">★</span>
+        <span class="red">★</span>
+        <span class="gray">★</span>
+      </div>
+
+      <div class="boxGroup">
+        <div class="Box activeBox">
+          <span class="h6 formerLable activeLable">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </div>
+        <div class="Box">
+          <span class="h6 formerLable gray">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </div>
+        <div class="Box">
+          <span class="h6 formerLable gray">Medium</span>
+          <span class="h6 laterLable">₹450</span>
+        </div>
+      </div>
+
+      <button class="bigButton black background-lightGray">Customize & Add</button>
+      <button class="bigButton white background-red redButton">Add to Cart</button>
+
+      <div id="docurateBox"></div>
+    </section>
   </section>
 
-  <section class="SectionTitleGroup">
-    <h4 class="viewAll"><a href="#" class="red">view all</a></h4>
-    <h1 class="headTitle">Recommend</h1>
-    <h5 class="gray">Based on your purchase history</h5>
+  <section id="menuSection">
+    <section class="SectionTitleGroup">
+      <h4 class="viewAll"><a href="./menu.html" class="red">view all</a></h4>
+      <h1 class="headTitle">Menu</h1>
+      <h5 class="gray">What's on our menu</h5>
+    </section>
+
+    <section class="menuGridContainer">
+      <section class="foodItem" id="one">
+        <div class="imgContainer">
+          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        </div>
+
+        <div class="foodTextInfo">
+          <h4>Meat Delights1</h4>
+          <h5 class="gray">
+            <span>Starts from </span><span>₹299</span>
+          </h5>
+        </div>
+      </section>
+
+      <section class="foodItem" id="two">
+        <div class="imgContainer">
+          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        </div>
+        <div class="foodTextInfo">
+          <h4>Meat Delights2</h4>
+          <h5 class="gray">
+            <span>Starts from </span><span>₹299</span>
+          </h5>
+        </div>
+      </section>
+
+      <section class="foodItem" id="three">
+
+        <div class="imgContainer">
+          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        </div>
+
+        <div class="foodTextInfo">
+          <h4>Meat Delights3</h4>
+          <h5 class="gray">
+            <span>Starts from </span><span>₹299</span>
+          </h5>
+        </div>
+      </section>
+
+      <section class="foodItem" id="four">
+        <div class="imgContainer">
+          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        </div>
+        <div class="foodTextInfo">
+          <h4>Meat Delights4</h4>
+          <h5 class="gray">
+            <span>Starts from </span><span>₹299</span>
+          </h5>
+        </div>
+      </section>
+    </section>
   </section>
-
-  <section id="recommendCard">
-
-    <img id="recommendImg" src="../images/recommendImg.jpg" alt="the recommend food's images">
-
-    <h2>Veggie Cheese Extravaganza</h2>
-    <div class="starGroup">
-      <span class="red">★</span>
-      <span class="red">★</span>
-      <span class="red">★</span>
-      <span class="red">★</span>
-      <span class="gray">★</span>
-    </div>
-
-    <div class="boxGroup">
-      <div class="Box activeBox">
-        <span class="h6 formerLable activeLable">Medium</span>
-        <span class="h6 laterLable">₹450</span>
-      </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
-      </div>
-      <div class="Box">
-        <span class="h6 formerLable gray">Medium</span>
-        <span class="h6 laterLable">₹450</span>
-      </div>
-    </div>
-
-    <button class="bigButton black background-lightGray">Customize & Add</button>
-    <button class="bigButton white background-red redButton">Add to Cart</button>
-
-    <div id="docurateBox"></div>
-  </section>
-
-  <section class="SectionTitleGroup">
-    <h4 class="viewAll"><a href="./menu.html" class="red">view all</a></h4>
-    <h1 class="headTitle">Menu</h1>
-    <h5 class="gray">What's on our menu</h5>
-  </section>
-
   <script src="../javascript/common.js"></script>
 
 </body>
