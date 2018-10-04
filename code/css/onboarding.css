@@ -3,7 +3,7 @@ body{
 }
 #showboard {
   width: 100%;
-  padding-bottom: 140%;
+  padding-bottom: 123.46%;
   /* ↑用来占位,保证图片下面的内容不会窜上来 */
 }
 
@@ -24,6 +24,8 @@ body{
 ul li {
   list-style: none;
 }
+
+/* 用来移动图片的动画↓ */
 
 .toLeft{
   animation:movetoLeft 0.5s ease 1 both;
@@ -55,6 +57,15 @@ ul li {
   }
 }
 
+/* 随着图片变化的点↓ */
+.points {
+  font-size: 0.18rem;
+  line-height: 0.05rem;
+  letter-spacing: 0.1rem;
+  margin:.2rem auto .8rem;
+  text-align: center;
+}
+
 .titleUnderImg{
   margin:.2rem auto .1rem;
   text-align:center;
@@ -71,7 +82,6 @@ button {
   height: .3rem;
   width: 2.15rem;
   margin: 0 .8rem;
-
 }
 
 #QQButton {
