@@ -11,16 +11,14 @@ header {
 }
 
 .backToHomeButton {
-  position: relative;
-  float:left;
+  position: absolute;
   height: .14rem;
   width: .21rem;
-  margin-left: .2rem;
-  margin-top: .05rem;
+  left: .2rem;
+  top: .05rem;
 }
 
 a {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -43,10 +41,6 @@ a {
   }
 
   .imgContainer {
-    width: 100%;
-    height: 0px;
-    padding-bottom: 100%;
-    position: relative;
     border-radius: 0.1rem;
   }
 

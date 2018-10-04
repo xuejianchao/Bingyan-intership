@@ -8,7 +8,7 @@
   },
   "author": "xue",
   "license": "ISC",
-  "plus": {
+  "mainfest": {
     "statusbar": {
       "immersed": true
     }

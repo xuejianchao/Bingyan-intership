@@ -6,81 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
   <link href="../css/html-font-color.css" rel="stylesheet">
   <link href="../css/component.css" rel="stylesheet">
+  <link href="../css/home.css" rel="stylesheet">
+
   <title>主页</title>
-  <style>
-    body {
-      background-color: #fafafa
-    }
-
-    #deliverySec {
-      margin: 21.6px 5.3% 0px;
-    }
-
-    #deliLable {
-      display: inline-block;
-      width: 0.07rem;
-      height: 0.1rem;
-      margin-right: 0.05rem;
-    }
-
-    #cityInfo{
-      padding-top:0.05rem;
-    }
-
-    #deLiMan-warp {
-      float: right;
-      height: .25rem;
-      width: .25rem;
-      margin: .03rem 0;
-      border-radius: .125rem;
-    }
 
 
-
-    /* 推荐部分 */
-    .SectionTitleGroup {
-      margin: .4rem .2rem 0px;
-    }
-
-    .headTitle {
-      margin-bottom: 0.05rem;
-    }
-
-    .viewAll {
-      float: right;
-    }
-
-    .viewall:visited {
-      color: #F34949;
-      text-decoration: none;
-    }
-
-    #recommendCard {
-      box-sizing: border-box;
-      width: 89.3%;
-      border-radius: .1rem;
-      margin: .2rem .2rem;
-      padding: .2rem;
-      background-color: #ffffff;
-    }
-
-    #recommendImg-warp {
-      width: 100%;
-      margin-bottom: .2rem;
-      border-radius: .1rem;
-    }
-
-    .bigButton {
-      width: 100%;
-      height: .3rem;
-      text-align: center;
-      /* ↑父元素上设置这个,子元素中的inline就会水平居中 */
-    }
-
-    .redButton {
-      margin-top: .1rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -92,17 +22,15 @@
     </div>
 
     <!-- <div style="display:inline-block; vertical-align: middle"> -->
-    <div style="display:flex; justify-content: start">
+    <div>
       <div id="deliLable">
-        <div class="imgContainer" style="padding-bottom: 155%">
-          <img id="addressImg" src="../images/address.png">
-        </div>
+        <img class="imgWithRatio" src="../images/address.png">
       </div>
       <h6 class="red" style="display: inline-block">
         DELIVERY
       </h6>
     </div>
-    <h3 id="cityInfo">asdfasdfa</h3>
+    <h3 id="cityInfo">Bangalore, India</h3>
 
   </section>
 
@@ -113,11 +41,8 @@
   </section>
 
   <section id="recommendCard">
-    <div id="recommendImg-warp">
-      <div class="imgContainer">
-        <img src="../images/recommendImg.jpg" alt="the recommend food's images">
-      </div>
-    </div>
+
+    <img id="recommendImg" src="../images/recommendImg.jpg" alt="the recommend food's images">
 
     <h2>Veggie Cheese Extravaganza</h2>
     <div class="starGroup">
@@ -146,7 +71,10 @@
     <button class="bigButton black background-lightGray">Customize & Add</button>
     <button class="bigButton white background-red redButton">Add to Cart</button>
 
+    <div id="docurateBox"></div>
   </section>
+
+
 
   <section class="SectionTitleGroup">
     <h4 class="viewAll"><a href="./menu.html" class="red">view all</a></h4>

@@ -21,6 +21,10 @@ body{
   left: 0rem;
 }
 
+img{
+  position:absolute;
+}
+
 ul li {
   list-style: none;
 }

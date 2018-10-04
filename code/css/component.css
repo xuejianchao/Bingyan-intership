@@ -41,23 +41,30 @@
 }
 
 /* 图像的控制 */
-/* 意义在于给出一个宽高相等的图片,因为大多数情况下是宽高相等的 */
+/* 如果需要圆角的话,在界面上单独写一个规则 */
+img {
+  /* 让图像可以:宽度适应父元素的宽度,豪赌等比例缩放 */
+  border-radius: inherit;
+  width: 100%;
+}
+
+.imgWithRatio{
+  /* 如果需要比例,就给img加上这个类 */
+  /* 具体的比例用一个只包含图像的div规定 */
+  height: 100%;
+}
+
 .imgContainer {
+  /* 如果需要正方的图片,就:
+  1.给图片加上上面的类
+  2.用这个把图片包起来 */
+  /* 这样的话,图片会自动变成父元素的100%width */
   width: 100%;
   height: 0px;
   padding-bottom: 100%;
   position: relative;
   overflow: hidden;
   border-radius: inherit;
-}
-
-img {
-  border-radius: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 button {
