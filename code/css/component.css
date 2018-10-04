@@ -79,8 +79,12 @@ input:unchecked+label>span.formerLable {
   }
 
   .outerBox {
-    width: 29%;
+    width: 31%;
     /* 项目数量改变的时候不太方便 */
+  }
+
+  .outerBox>label{
+    box-sizing: border-box;
   }
 }
 

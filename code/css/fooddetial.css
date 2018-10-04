@@ -1,20 +1,32 @@
+#GoToRightDown {
+  margin: .2rem;
+}
+
 h4 {
-  margin: 0 .2rem .1rem;
+  margin: 0 0 .1rem;
 }
 
 .boxGroup {
-  margin: .1rem .2rem .2rem;
+  margin: .1rem 0 .2rem;
 }
 
 input[type='submit'] {
   font-size: .12rem;
   line-height: .3rem;
 
-  margin: .1rem .2rem .2rem;
+  margin: .1rem 0 0;
   width: 3.35rem;
   height: .3rem;
   /* wemm先设置margin,然后就限制住了margin`-  */
 }
+
+.detail {
+  line-height: 0.22rem;
+  margin-bottom:.05rem;
+}
+
+
+
 
 @media screen and (max-width : 767px) {
   #nameAndStar {
@@ -25,14 +37,90 @@ input[type='submit'] {
     border-radius: 0 0 .12rem .12rem;
   }
 
-  .detail {
-    margin: .2rem .2rem;
-    line-height: 0.22rem;
+  #docuBar {
+    display: none;
+  }
+
+  /* 按钮是白的 */
+  #backButton {
+    position: absolute;
+    height: .14rem;
+    width: .21rem;
+    top: .2rem;
+    left:.2rem;
+    z-index: 1;
+  }
+
+  #likeButton{
+    position: absolute;
+    height: .14rem;
+    width: .21rem;
+    top: .2rem;
+    right:.2rem;
+    z-index: 1;
   }
 }
 
-@media screen and (min-width:768px){
-  body{
-    
+@media screen and (min-width:768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: .2rem;
+
+    padding-top: .2rem;
+  }
+
+  header {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  #nameAndStar {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    text-align:right;
+    margin-right:.2rem;
+  }
+
+  #docuBar {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    margin: 0 .2rem;
+    height: .05rem;
+  }
+
+  .detailImg {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    margin:.2rem 0 .2rem .2rem;
+    border-radius: .2rem;
+  }
+
+  #GoToRightDown{
+    grid-row:3/4;
+    grid-column: 2/3;
+  }
+
+  header{
+    position: relative;
+  }
+
+  /* 按钮是黑的 */
+  #backButton {
+    position: absolute;
+    height: .14rem;
+    width: .21rem;
+    top: .2rem;
+    left:.2rem;
+    z-index: 1;
+  }
+
+  #likeButton{
+    position: absolute;
+    height: .14rem;
+    width: .21rem;
+    top: .2rem;
+    left:.51rem;
+    z-index: 1;
   }
 }
