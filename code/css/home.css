@@ -3,7 +3,7 @@ body {
 }
 
 #deliverySec {
-  margin: 21.6px 5.3% 0px;
+  margin: .2rem .2rem 0;
 }
 
 #deliLable {
@@ -29,7 +29,7 @@ body {
 
 
 /* 推荐部分 */
-.SectionTitleGroup {
+#recoSectionTitleGroup {
   margin: .4rem .2rem 0px;
 }
 
@@ -84,6 +84,10 @@ body {
   background: #FFFFFF;
   box-shadow: 0 .05rem .2rem 0 rgba(59, 59, 59, 0.05);
   border-radius: .15rem;
+}
+
+#menuSectionTitleGroup{
+  margin:.2rem;
 }
 
 .menuGridContainer{
