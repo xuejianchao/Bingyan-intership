@@ -235,8 +235,8 @@ PicSlide.prototype.prev = function () {
 
   curr.classList.add('toRight');
   prev.classList.add('toCenter');
+  this.setX(prevprev, -3.75, 'rem');
   if (!this.isprevprevinscreen) {
-    this.setX(prevprev, -3.75, 'rem');
     this.isprevprevinscreen = false;
   }
   //↑先把图片移动到屏幕左侧外面,这样从右侧移动到左侧的过程就不算在动画中了

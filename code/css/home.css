@@ -76,6 +76,10 @@ body {
   margin-top: .1rem;
 }
 
+/* #asd,.grayButton{
+ transform: translateY(-0.7rem);
+} */
+
 #docurateBox {
   position: absolute;
   bottom: -0.15rem;
