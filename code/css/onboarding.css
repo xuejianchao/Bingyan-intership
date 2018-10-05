@@ -5,7 +5,7 @@ body{
 #showboard {
   overflow-x: hidden;
   width: 100%;
-  padding-bottom: 123.46%;
+  padding-bottom: 128.46%;
   /* ↑用来占位,保证图片下面的内容不会窜上来 */
 }
 
@@ -68,7 +68,7 @@ ul li {
   font-size: 0.18rem;
   line-height: 0.05rem;
   letter-spacing: 0.1rem;
-  margin:.2rem auto .8rem;
+  margin:.2rem auto .75rem;
   text-align: center;
 }
 
