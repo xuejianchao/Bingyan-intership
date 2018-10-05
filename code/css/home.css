@@ -2,6 +2,7 @@ body {
   background-color: #fafafa;
 }
 
+/* 邮递员部分 ↓ */
 #deliverySec {
   margin: .2rem .2rem 0;
 }
@@ -77,7 +78,7 @@ body {
 
 #docurateBox {
   position: absolute;
-  top: 4.05rem;
+  bottom: -0.15rem;
   left: .2rem;
   width: 2.95rem;
   height: 0.3rem;
@@ -89,7 +90,7 @@ body {
 }
 
 
-
+/* 菜单部分↓ */
 .menuGridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
