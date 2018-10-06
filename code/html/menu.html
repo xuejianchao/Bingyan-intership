@@ -13,17 +13,16 @@
 <body>
   <header>
     <div class="backToHomeButton">
-      <a href="../html/home.html"><img class="imgWithRatio" src="../images/箭头.png" alt="箭头"></a>
+      <a href="../html/home.html"><img class="imgWithRatio" src="../images/arrow-black.png" alt="arrow-black"></a>
     </div>
     <h1 id="MenuTitle">Menu</h1>
   </header>
 
 
   <section class="gridContainer">
-    <section class="foodItem" id="one">
-
+    <!-- <section class="foodItem">
       <div class="imgContainer">
-        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
       </div>
 
       <div class="foodTextInfo">
@@ -34,9 +33,9 @@
       </div>
     </section>
 
-    <section class="foodItem" id="two">
+    <section class="foodItem">
       <div class="imgContainer">
-        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
       </div>
       <div class="foodTextInfo">
         <h4>Meat Delights2</h4>
@@ -46,10 +45,10 @@
       </div>
     </section>
 
-    <section class="foodItem" id="three">
+    <section class="foodItem">
 
       <div class="imgContainer">
-        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
       </div>
 
       <div class="foodTextInfo">
@@ -60,9 +59,9 @@
       </div>
     </section>
 
-    <section class="foodItem" id="four">
+    <section class="foodItem">
       <div class="imgContainer">
-        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th (1).png" alt=""></a>
+        <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
       </div>
       <div class="foodTextInfo">
         <h4>Meat Delights4</h4>
@@ -70,10 +69,58 @@
           <span>Starts from </span><span>₹299</span>
         </h5>
       </div>
-    </section>
+    </section> -->
   </section>
 
   <script src="../javascript/common.js"></script>
+  <script>
+    //从后台请求食品的数据,
+    var XHR = new XMLHttpRequest();
+    XHR.onreadystatechange = function () {
+      if (XHR.readyState === 4 && XHR.status === 200) {
+        //返回应该是个的应该只有图片,名称,basic价格
+        generAllMoudle(JSON.parse(XHR.responseText));
+      }
+    }
+    XHR.open('get', '/menu/getmenu', true);
+    XHR.send();
+
+
+    //然后放到界面上
+    function generAllMoudle(json) {
+      var foodItemArray = json.content;
+      var foodNum = foodItemArray.length;
+      for (var i = 0; i < foodNum; i++) {
+        generOneFood(foodItemArray[i]);
+      }
+    }
+
+    
+    //测试没有问题
+    function generOneFood(onefoodjson) {
+      var appendSection = document.createElement('section');
+      appendSection.classList.add('foodItem');
+
+      var imgString =
+        `<div class="imgContainer">
+          <a href="./food_detial.html"><img class="imgWithRatio" src="${onefoodjson.pic}" alt=""></a>
+          </div>`
+        .trim();
+
+      var infoString =
+        `<div class="foodTextInfo">
+         <h4>${onefoodjson.name}</h4>
+         <h5 class="gray">
+           <span>Starts from </span><span>${onefoodjson.basicPrice}</span>
+         </h5>
+       </div>`
+
+      appendSection.innerHTML = imgString + infoString;
+
+      document.querySelector('.gridContainer').append(appendSection);
+
+    }
+  </script>
 
 </body>
 
