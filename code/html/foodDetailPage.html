@@ -25,10 +25,9 @@
     </div>
   </header>
 
-  <div class="imgContainer detailImg"> </div>
+  <div class="imgContainer detailImg"></div>
 
-  <div id="nameAndStar">
-  </div>
+  <div id="nameAndStar"></div>
 
   <div id="docuBar" class="background-red"></div>
 
@@ -37,6 +36,9 @@
 
   <script src="../javascript/common.js"></script>
   <script src="../javascript/fooddetail.js"></script>
+  <script src="../javascript/addOrderToCart.js"></script>
+  <script src="../javascript/generFoodInfo.js"></script>
+
   <script>
     //基础页面(没啥东西)加载完成,就向服务器请求这个食物的数据
     var querystring = window.location.href.split("?")[1].split('=');
@@ -55,63 +57,40 @@
       console.log(responseJSON);
 
       //大图片
-      var detailImgStr = `<img src="${responseJSON.pic}" alt="">`
-      document.querySelector(".imgContainer, .detailImg").innerHTML = detailImgStr;
+      generPic(responseJSON.pic, '', ".imgContainer, .detailImg");
 
       //食物名称和星星
-      var starGroupStr = '';
-      for (var i = 0; i < responseJSON.point; i++) {
-        starGroupStr += '<span class="red">★</span>';
-      }
-      for (var i = 4; i >= responseJSON.point; i--) {
-        starGroupStr += '<span class="gray">★</span>';
-      }
-
-      var nameAndStarStr =
-        `<h2 class="foodTitle">${responseJSON.name}</h2>
-          <div class="starGroup">
-            ${starGroupStr}
-          </div>`
-
-      document.querySelector('#nameAndStar').innerHTML = nameAndStarStr;
+      generNameAndStar(responseJSON.point, responseJSON.name, 'class="foodTitle"', 'class="starGroup"', '#nameAndStar');
 
       //装饰条应该不用动态生成.
 
+      //↓生成详细信息
       var detailInfoStr = `<h5 class="detail gray">${responseJSON.descript}</h5>`
 
+      //↓ 生成表格
       var forminnerHTML = '';
 
       for (select in responseJSON.selection) {
         console.log(select);
+        //对每一个选项,生成title和boxgroup
         var titleStr = `<h4>${select}</h4>`;
-
-        var boxStrs = '';
-        for (var i = 0; i < responseJSON.selection[select].length; i++) {
-          boxStrs +=
-            `<div class="outerBox">
-            <input id="${select+i}" name="${select}" type="radio">
-            <label class="Box" for="${select+i}">
-              <span class="h6 formerLable">${responseJSON.selection[select][i][0]}</span>
-              <span class="h6 laterLable">${responseJSON.selection[select][i][2]}</span>
-            </label>
-          </div>`
-            .trim();
-        }
-
-        var boxsGroupStr = `<div class="boxGroup">${boxStrs}</div>`
-
+        var boxsGroupStr = generOneBoxGroup(select, responseJSON.selection[select], false);
         forminnerHTML += titleStr + boxsGroupStr;
       }
 
       forminnerHTML += '<input type="submit" class="bigButton white background-red redButton" value="Add to Cart">';
 
-      var formouterHTML = `<form action="#" method="POST">${forminnerHTML}</form>`;
 
+      //生成表格元素,向其中添加内容
+      var formouterHTML = `<form action="/addtocart" method="POST">${forminnerHTML}</form>`;
       document.querySelector('#GoToRightDown').innerHTML = detailInfoStr + formouterHTML;
 
-      document.querySelectorAll('.outerBox:first-of-type>input').forEach(function(input){
-        input.setAttribute('checked','checked');
+      document.querySelectorAll('.outerBox:first-of-type>input').forEach(function (input) {
+        input.setAttribute('checked', 'checked');
       })
+
+      //要放在这个生成函数中,因为生成函数是一个回调函数
+      addHandlerToButton('input[type="submit"]', 'form', '.foodTitle');
     }
   </script>
 </body>

@@ -38,57 +38,15 @@
     </section>
 
     <section id="recoSectionTitleGroup">
-      <h4 class="viewAll"><a href="#" class="red">view all</a></h4>
+      <h4 class="viewAll"><a href="/recommend" class="red">view all</a></h4>
       <h1 class="headTitle">Recommend</h1>
       <h5 class="gray">Based on your purchase history</h5>
     </section>
 
     <section id="recommendCard">
-      <a href="/foodDetailPage">
-        <img id="recommendImg" src="../images/recommendImg.jpg" alt="the recommend food's images">
-      </a>
-
-      <h2>Veggie Cheese Extravaganza</h2>
-      <div class="starGroup">
-        <span class="red">★</span>
-        <span class="red">★</span>
-        <span class="red">★</span>
-        <span class="red">★</span>
-        <span class="gray">★</span>
-      </div>
-
-      <form action="/addToCart">
-        <div class="boxGroup">
-          <div class="outerBox">
-            <input id="size1" name="size" type="radio" checked>
-            <label class="Box" for="size1">
-              <span class="h6 formerLable">Medium</span>
-              <span class="h6 laterLable">123</span>
-            </label>
-          </div>
-
-          <div class="outerBox">
-            <input id="size2" name="size" type="radio">
-            <label class="Box" for="size2">
-              <span class="h6 formerLable">Medium</span>
-              <span class="h6 laterLable">654</span>
-            </label>
-          </div>
-
-          <div class="outerBox">
-            <input id="size3" name="size" type="radio">
-            <label class="Box" for="size3">
-              <span class="h6 formerLable">234</span>
-              <span class="h6 laterLable">432</span>
-            </label>
-          </div>
-        </div>
-        <a href="/foodDetailPage" id="asd">
-          <p class="bigButton black background-lightGray">Customize & Add</p>
-        </a>
-        <input type="submit" class="bigButton white background-red redButton" value="Add to Cart">
-      </form>
-      
+      <a href="/foodDetailPage"></a>
+      <div id="starAndNameCon"></div>
+      <form action="/addToCart"></form>
 
       <div id="docurateBox"></div>
     </section>
@@ -108,16 +66,63 @@
 
   <script src="../javascript/common.js"></script>
   <script src="../javascript/getfoodItems.js"></script>
+  <script src="../javascript/addOrderToCart.js"></script>
+  <script src="../javascript/generFoodInfo.js"></script>
+
   <script>
-    //从后台请求食品的数据,
+    //从后台请求食品的数据,然后添加到页面中
     var XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
       if (XHR.readyState === 4 && XHR.status === 200) {
-        generAllMoudle(JSON.parse(XHR.responseText),'.menuGridContainer');
+        generAllMoudle(JSON.parse(XHR.responseText), '.menuGridContainer');
       }
     }
     XHR.open('get', '/menu/getmenu', true);
     XHR.send();
+
+
+    //获取第一个推荐食品
+    var XHRforReco = new XMLHttpRequest();
+    XHRforReco.onreadystatechange = function () {
+      if (XHRforReco.readyState === 4 && XHRforReco.status === 200) {
+        generRecoCard(JSON.parse(XHRforReco.responseText));
+      }
+    }
+    XHRforReco.open('get', '/getFirstReco', true);
+    XHRforReco.send();
+
+    function generRecoCard(contentObject) {
+      //动态添加图片
+      generPic(contentObject.pic, 'id="recommendImg"', 'a[href="/foodDetailPage"]');
+      //动态添加star&title
+      generNameAndStar(contentObject.point, contentObject.name, 'id="recFoorTitle"', 'class="starGroup"', "#starAndNameCon");
+
+      //获取所有的selection的boxgroupStr,并且设置后两个display:none
+      var allBoxGroupStr = '';
+      for (select in contentObject.selection) {
+        if(select === 'Size'){
+          allBoxGroupStr += generOneBoxGroup(select,contentObject.selection[select],false);
+        } else{
+          allBoxGroupStr += generOneBoxGroup(select,contentObject.selection[select],true);
+        }
+      }
+
+      //将两个按钮连接到boxgroupStr后面,
+      var forminnerHtml = allBoxGroupStr + 
+        `<a href="/foodDetailPage?id=${contentObject.id}">
+          <p class="bigButton black background-lightGray">Customize & Add</p>
+        </a>
+        <input type="submit" class="bigButton white background-red redButton" value="Add to Cart">`
+
+      //将forminnerHtml放入form中
+      document.querySelector('form[action="/addToCart"]').innerHTML = forminnerHtml;
+
+      document.querySelectorAll('.outerBox:first-of-type>input').forEach(function (input) {
+        input.setAttribute('checked', 'checked');
+      });
+
+      addHandlerToButton('input[type="submit"]', 'form[action="/addToCart"]', "#recFoorTitle");
+    }
   </script>
 </body>
 
