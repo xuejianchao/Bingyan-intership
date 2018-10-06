@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link href="../css/html-font-color.css" rel="stylesheet">
+  <link href="../css/component.css" rel="stylesheet">
+  <link href="../css/fooddetial.css" rel="stylesheet">
+  <title>someFood</title>
+
+
+</head>
+
+<body>
+  <header>
+    <div id="backButton">
+      <img class="imgWithRatio" src="../images/arrow-black.png" alt="箭头" onclick="history.back(-1)">
+      <!-- 注意这个img有一个onclick处理器,就是用来回到上一个界面 -->
+    </div>
+
+    <div id="likeButton">
+      <img id="blackheart" class="imgWithRatio" src="../images/heart-black.png" alt="表示不喜欢的黑心">
+      <img id="redheart" class="imgWithRatio" src="../images/heart-red.png" alt="表示喜欢的红心">
+    </div>
+  </header>
+
+  <div class="imgContainer detailImg"> </div>
+
+  <div id="nameAndStar">
+  </div>
+
+  <div id="docuBar" class="background-red"></div>
+
+  <div id="GoToRightDown"></div>
+
+
+  <script src="../javascript/common.js"></script>
+  <script src="../javascript/fooddetail.js"></script>
+  <script>
+    //基础页面(没啥东西)加载完成,就向服务器请求这个食物的数据
+    var querystring = window.location.href.split("?")[1].split('=');
+    var XHR = new XMLHttpRequest();
+
+    XHR.onreadystatechange = function () {
+      if (XHR.readyState === 4 && XHR.status === 200) {
+        generFoodDetail(JSON.parse(XHR.responseText));
+      }
+    }
+    XHR.open('get', `/foodDetailContent?id=${querystring[1]}`, true);
+    XHR.send();
+
+    //生成页面
+    function generFoodDetail(responseJSON) {
+      console.log(responseJSON);
+
+      //大图片
+      var detailImgStr = `<img src="${responseJSON.pic}" alt="">`
+      document.querySelector(".imgContainer, .detailImg").innerHTML = detailImgStr;
+
+      //食物名称和星星
+      var starGroupStr = '';
+      for (var i = 0; i < responseJSON.point; i++) {
+        starGroupStr += '<span class="red">★</span>';
+      }
+      for (var i = 4; i >= responseJSON.point; i--) {
+        starGroupStr += '<span class="gray">★</span>';
+      }
+
+      var nameAndStarStr =
+        `<h2 class="foodTitle">${responseJSON.name}</h2>
+          <div class="starGroup">
+            ${starGroupStr}
+          </div>`
+
+      document.querySelector('#nameAndStar').innerHTML = nameAndStarStr;
+
+      //装饰条应该不用动态生成.
+
+      var detailInfoStr = `<h5 class="detail gray">${responseJSON.descript}</h5>`
+
+      var forminnerHTML = '';
+
+      for (select in responseJSON.selection) {
+        console.log(select);
+        var titleStr = `<h4>${select}</h4>`;
+
+        var boxStrs = '';
+        for (var i = 0; i < responseJSON.selection[select].length; i++) {
+          boxStrs +=
+            `<div class="outerBox">
+            <input id="${select+i}" name="${select}" type="radio">
+            <label class="Box" for="${select+i}">
+              <span class="h6 formerLable">${responseJSON.selection[select][i][0]}</span>
+              <span class="h6 laterLable">${responseJSON.selection[select][i][2]}</span>
+            </label>
+          </div>`
+            .trim();
+        }
+
+        var boxsGroupStr = `<div class="boxGroup">${boxStrs}</div>`
+
+        forminnerHTML += titleStr + boxsGroupStr;
+      }
+
+      forminnerHTML += '<input type="submit" class="bigButton white background-red redButton" value="Add to Cart">';
+
+      var formouterHTML = `<form action="#" method="POST">${forminnerHTML}</form>`;
+
+      document.querySelector('#GoToRightDown').innerHTML = detailInfoStr + formouterHTML;
+
+      document.querySelectorAll('.outerBox:first-of-type>input').forEach(function(input){
+        input.setAttribute('checked','checked');
+      })
+    }
+  </script>
+</body>
+
+</html>

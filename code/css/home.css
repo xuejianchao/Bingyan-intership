@@ -67,7 +67,7 @@ body {
   width: 100%;
   height: .3rem;
   font-size: .12rem;
-  line-height:.17rem;
+  line-height:.3rem;
   text-align: center;
   /* ↑父元素上设置这个,子元素中的inline就会水平居中 */
 }
@@ -76,9 +76,10 @@ body {
   margin-top: .1rem;
 }
 
-/* #asd,.grayButton{
- transform: translateY(-0.7rem);
-} */
+#asd{
+  height:.3rem;
+  z-index: 1;
+}
 
 #docurateBox {
   position: absolute;

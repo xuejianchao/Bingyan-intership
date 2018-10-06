@@ -44,7 +44,7 @@
     </section>
 
     <section id="recommendCard">
-      <a href="./food_detial.html">
+      <a href="/foodDetailPage">
         <img id="recommendImg" src="../images/recommendImg.jpg" alt="the recommend food's images">
       </a>
 
@@ -83,8 +83,8 @@
             </label>
           </div>
         </div>
-        <a href="./food_detial.html" id="asd">
-          <button class="bigButton black background-lightGray grayButton">Customize & Add</button>
+        <a href="/foodDetailPage" id="asd">
+          <p class="bigButton black background-lightGray">Customize & Add</p>
         </a>
         <input type="submit" class="bigButton white background-red redButton" value="Add to Cart">
       </form>
@@ -96,66 +96,29 @@
 
   <section id="menuSection">
     <section id="menuSectionTitleGroup">
-      <h4 class="viewAll"><a href="./menu.html" class="red">view all</a></h4>
+      <h4 class="viewAll"><a href="/menu" class="red">view all</a></h4>
       <h1 class="headTitle">Menu</h1>
       <h5 class="gray">What's on our menu</h5>
     </section>
 
     <section class="menuGridContainer">
-      <section class="foodItem" id="one">
-        <div class="imgContainer">
-          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
-        </div>
-
-        <div class="foodTextInfo">
-          <h4>Meat Delights1</h4>
-          <h5 class="gray">
-            <span>Starts from </span><span>₹299</span>
-          </h5>
-        </div>
-      </section>
-
-      <section class="foodItem" id="two">
-        <div class="imgContainer">
-          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
-        </div>
-        <div class="foodTextInfo">
-          <h4>Meat Delights2</h4>
-          <h5 class="gray">
-            <span>Starts from </span><span>₹299</span>
-          </h5>
-        </div>
-      </section>
-
-      <section class="foodItem" id="three">
-
-        <div class="imgContainer">
-          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
-        </div>
-
-        <div class="foodTextInfo">
-          <h4>Meat Delights3</h4>
-          <h5 class="gray">
-            <span>Starts from </span><span>₹299</span>
-          </h5>
-        </div>
-      </section>
-
-      <section class="foodItem" id="four">
-        <div class="imgContainer">
-          <a href="./food_detial.html"><img class="imgWithRatio" src="../images/th(1).png" alt=""></a>
-        </div>
-        <div class="foodTextInfo">
-          <h4>Meat Delights4</h4>
-          <h5 class="gray">
-            <span>Starts from </span><span>₹299</span>
-          </h5>
-        </div>
-      </section>
     </section>
   </section>
-  <script src="../javascript/common.js"></script>
 
+
+  <script src="../javascript/common.js"></script>
+  <script src="../javascript/getfoodItems.js"></script>
+  <script>
+    //从后台请求食品的数据,
+    var XHR = new XMLHttpRequest();
+    XHR.onreadystatechange = function () {
+      if (XHR.readyState === 4 && XHR.status === 200) {
+        generAllMoudle(JSON.parse(XHR.responseText),'.menuGridContainer');
+      }
+    }
+    XHR.open('get', '/menu/getmenu', true);
+    XHR.send();
+  </script>
 </body>
 
 </html>
