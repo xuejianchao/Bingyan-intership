@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link href="../css/html-font-color.css" rel="stylesheet">
+  <link href="../css/component.css" rel="stylesheet">
+  <link href="../css/menu.css" rel="stylesheet">
+  <title>Recommend</title>
+</head>
+
+<body>
+  <header>
+    <div class="backToHomeButton">
+      <a href="/home"><img class="imgWithRatio" src="../images/arrow-black.png" alt="arrow-black"></a>
+    </div>
+    <h1 id="MenuTitle">Recommend</h1>
+  </header>
+
+
+  <section class="gridContainer">
+  </section>
+
+  <script src="../javascript/common.js"></script>
+  <script src="../javascript/getfoodItems.js"></script>
+  <script>
+    //从后台请求食品的数据,
+    var XHR = new XMLHttpRequest();
+    XHR.onreadystatechange = function () {
+      if (XHR.readyState === 4 && XHR.status === 200) {
+        generAllMoudle(JSON.parse(XHR.responseText),'.gridContainer');
+      }
+    }
+    XHR.open('get', '/recommend/getreco', true);
+    XHR.send();
+  </script>
+
+</body>
+
+</html>

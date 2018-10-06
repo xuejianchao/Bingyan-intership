@@ -237,7 +237,6 @@ router('/cart/get', function (req, res) {
 
 router('/cart', function (req, res) {
   fs.readFile('./html/cart.html', function (err, data) {
-
       if (err) {
         res.send(err);
       } else {
@@ -248,7 +247,6 @@ router('/cart', function (req, res) {
         res.end();
       }
     }
-
   )
 })
 
@@ -299,8 +297,32 @@ router('/menu/getmenu', function (req, res) {
   res.send(jsonToReturn);
 })
 
+//↓ 在推荐界面中,响应"给我食物的数据"的请求的路由
+router('/recommend/getreco', function (req, res) {
+  //遍历recoFoodInfo数组,按照规定的格式返回一个json
+  var jsonToReturn = {
+    type: 'foodcontent',
+    content: []
+  }
+
+  var foodNum = recoFoodInfo.content.length;
+
+  for (var i = 0; i < foodNum; i++) {
+    var oneFoodInfo = {
+      name: recoFoodInfo.content[i].name,
+      basicPrice: recoFoodInfo.content[i].basicPrice,
+      pic: recoFoodInfo.content[i].pic,
+      id: recoFoodInfo.content[i].id
+    };
+    jsonToReturn.content.push(oneFoodInfo);
+    console.log(i);
+  }
+  console.log(jsonToReturn);
+  res.send(jsonToReturn);
+})
+
 //提供静态资源的路由
-router('/menu', '/home', '/food_detail', '/onboarding', function (req, res) {
+router('/menu','/recommend', '/home', '/food_detail', '/onboarding', function (req, res) {
   if (req.url.split('.')[1] == 'html') {
     var path = './html' + req.url;
   } else {
