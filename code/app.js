@@ -213,7 +213,7 @@ router(function (req, res, next) {
 
     res.send(JSON.stringify(recoFoodInfo.content[1]));
 
-  } else if (urlParsed.pathname === '/') {
+  } else if (urlParsed.pathname === '/' || urlParsed.pathname === '/DEV') {
     fs.readFile('./html/onboarding.html', function (err, data) {
       if (err) {
         res.send(err);

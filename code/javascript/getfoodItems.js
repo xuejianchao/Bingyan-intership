@@ -23,7 +23,7 @@ function generOneFood(onefoodjson,selector) {
     `<div class="foodTextInfo">
      <h4>${onefoodjson.name}</h4>
      <h5 class="gray">
-       <span>Starts from </span><span>${onefoodjson.basicPrice}</span>
+       <span>Starts from </span><span>₹${onefoodjson.basicPrice}</span>
      </h5>
    </div>`
 

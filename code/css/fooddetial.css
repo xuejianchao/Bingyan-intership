@@ -86,6 +86,8 @@ input[type='submit'] {
   header {
     grid-row: 1/2;
     grid-column: 1/2;
+    height:.43rem;
+    position: relative;
   }
 
   #nameAndStar {
@@ -114,16 +116,13 @@ input[type='submit'] {
     grid-column: 2/3;
   }
 
-  header{
-    position: relative;
-  }
-
   /* 按钮是黑的 */
+  /* 大屏幕 */
   #backButton {
     position: absolute;
     height: .14rem;
     width: .21rem;
-    top: .2rem;
+    top: .145rem;
     left:.2rem;
     z-index: 1;
   }
@@ -132,7 +131,7 @@ input[type='submit'] {
     position: absolute;
     height: .18rem;
     width: .19rem;
-    top: .18rem;
+    top: .125rem;
     left:.51rem;
     z-index: 1;
   }

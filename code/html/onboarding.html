@@ -83,14 +83,21 @@
     <h5>手机注册</h5>
   </button>
   <h5 class="gray" style="margin:.2rem auto;text-align: center">已经有账户了? <a href="#" class="red">立刻登录</a></h5>
-  <h5 style="margin:.2rem auto;text-align: center"><a href="/home" class="red">开发者专用通道,无需登录:P</a></h5>
+  <div id="devAccess"></div>
+  
 
 
 
   <script src="../javascript/common.js"></script>
   <script src="../javascript/pic-swipe.js"></script>
 
-
+  <script>
+    var urlArray = window.location.href.split('/');
+    var lastEle = urlArray[urlArray.length-1];
+    if(lastEle === 'DEV'){
+      document.querySelector('#devAccess').innerHTML=`<h5 style="margin:.2rem auto;text-align: center"><a href="/home" class="red">开发者专用通道,无需登录:P</a></h5>`;
+    }
+  </script>
 </body>
 
 </html>
