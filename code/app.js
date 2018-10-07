@@ -17,168 +17,6 @@ var mime = {
   js: 'text/javascript'
 };
 
-var foodinfo = {
-  type: 'foodcontent',
-  content: [{
-    //还要考虑怎么给每个食物生成一个界面==>用ajax要来的数据填充detail上的大部分内容
-    id: '1',
-    name: 'Veggie Cheese Extravaganza',
-    pic: '../images/th(2).png', //目前都只用这一个
-    point: '2',
-    descript: "For a vegetarian looking for a BIG treat that goes easy on the spices, this one's got it all. The onions, the capsicum, those delectable mushrooms - with paneer and golden corn to top it all.",
-    basicPrice: 199,
-    selection: {
-      Size: [
-        ['Medium', 251, '₹450'],
-        ['Large', 791, '₹990'],
-        ['Small', 0, '₹199']
-      ],
-      Crust: [
-        ['Stanard', 0, ''],
-        ['Garlic Roasted', 0, 'free'],
-        ['Cheese Burst', 0, 'free']
-      ],
-      Topping: [
-        ['Stanard', 0, ''],
-        ['Extra Cheese', 0, '₹99'],
-        ['Extra Spice', 0, '']
-      ]
-    }
-  }, {
-    id: "2",
-    name: 'Paneer Pan Pizza',
-    pic: '../images/pannerPizza.jpg',
-    point: '5',
-    descript: "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
-    basicPrice: 199,
-    selection: {
-      Size: [
-        ['Medium', 251, '₹450'],
-        ['Large', 791, '₹990'],
-        ['Small', 0, '₹199']
-      ],
-      Crust: [
-        ['Stanard', 0, ''],
-        ['Garlic Roasted', 0, 'free'],
-        ['Cheese Burst', 0, 'free']
-      ],
-      Topping: [
-        ['Stanard', 0, ''],
-        ['Extra Cheese', 99, '₹99'],
-        ['Extra Spice', 0, '']
-      ]
-    }
-  }, {
-    id: "3",
-    name: 'Burger',
-    pic: '../images/burger.jpg',
-    point: '4',
-    descript: "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
-    basicPrice: 149,
-    selection: {
-      Size: [
-        ['Medium', 50, '₹199'],
-        ['Large', 150, '₹299'],
-        ['Small', 0, '₹149']
-      ],
-      Stuffing: [
-        ['Stanard', 0, ''],
-        ['Extra Cheese', 49, '₹49'],
-        ['Extra Meet', 0, '']
-      ]
-    }
-  }, {
-    id: "4",
-    name: 'Salad',
-    pic: '../images/salad.jpg',
-    point: '3',
-    descript: "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
-    basicPrice: 149,
-    selection: {
-      Size: [
-        ['Medium', 50, '₹199'],
-        ['Large', 150, '₹299'],
-        ['Small', 0, '₹149']
-      ],
-      Stuffing: [
-        ['Stanard', 0, ''],
-        ['Extra Cheese', 49, '₹49'],
-        ['Extra Meet', 0, '']
-      ]
-    }
-  }]
-}
-
-var recoFoodInfo = {
-  type: 'foodcontent',
-  content: [{
-    //还要考虑怎么给每个食物生成一个界面==>用ajax要来的数据填充detail上的大部分内容
-    id: '1',
-    name: 'R Veggie Cheese Extravaganza',
-    pic: '../images/th(2).png', //目前都只用这一个
-    point: '2',
-    descript: "For a vegetarian looking for a BIG treat that goes easy on the spices, this one's got it all. The onions, the capsicum, those delectable mushrooms - with paneer and golden corn to top it all.",
-    basicPrice: 199,
-    selection: {
-      Size: [
-        ['Medium', 251, '₹450'],
-        ['Large', 791, '₹990'],
-        ['Small', 0, '₹199']
-      ],
-      Crust: [
-        ['Stanard', 0, ''],
-        ['Garlic Roasted', 0, 'free'],
-        ['Cheese Burst', 0, 'free']
-      ],
-      Topping: [
-        ['Stanard', 0, ''],
-        ['Extra Cheese', 0, '₹99'],
-        ['Extra Spice', 0, '']
-      ]
-    }
-  }, {
-    id: "2",
-    name: 'Paneer Pan Pizza',
-    pic: '../images/pannerPizza.jpg',
-    point: '5',
-    descript: "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
-    basicPrice: 199,
-    selection: {
-      Size: [
-        ['Medium', 251, '₹450'],
-        ['Large', 791, '₹990'],
-        ['Small', 0, '₹199']
-      ],
-      Crust: [
-        ['Stanard', 0, ''],
-        ['Garlic Roasted', 0, 'free'],
-        ['Cheese Burst', 0, 'free']
-      ],
-      Topping: [
-        ['Stanard', 0, ''],
-        ['Extra Cheese', 99, '₹99'],
-        ['Extra Spice', 0, '']
-      ]
-    }
-  }]
-}
-
-var cart = {
-  type: 'cart',
-  content: [{
-    date: '2018-9-2',
-    name: 'something to eat1',
-    size: 'mediu',
-    topping: 'fish',
-    some: 'something1'
-  }, {
-    date: '2018-9-2',
-    name: 'something to eat2',
-    size: 'large',
-    topping: 'meat',
-    some: 'something2'
-  }]
-}
 
 router(function (req, res, next) {
   var urlParsed = url.parse(req.url);
@@ -203,16 +41,87 @@ router(function (req, res, next) {
 
     //根据querystring中的id找到目标食物,然后返回
     //这里不能用forEach();
-    for (var i = 0; i < foodinfo.content.length; i++) {
-      if (targetid == foodinfo.content[i].id) {
-        res.send(JSON.stringify(foodinfo.content[i]));
+
+    fs.readFile('./json/menu.json', function (err, data) {
+      if (err) {
+        res.send(err);
+      } else {
+        var foodinfo = JSON.parse(data);
+        for (var i = 0; i < foodinfo.content.length; i++) {
+          if (targetid == foodinfo.content[i].id) {
+            res.send(JSON.stringify(foodinfo.content[i]));
+          }
+        }
       }
-    }
+
+    })
+
   } else if (urlParsed.pathname === '/getFirstReco') {
     //用来响应"请给我第一个推荐食品的详细信息"的请求.
+    fs.readFile("./json/recommend.json", function (err, data) {
+      if (err) {
+        res.send(err);
+      } else {
+        //获取推荐列表中的第一个
+        var targetid = JSON.parse(data).content[0];
+        fs.readFile('./json/menu.json', function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            var menuJSONContent = JSON.parse(data).content;
+            var len = menuJSONContent.length;
 
-    res.send(JSON.stringify(recoFoodInfo.content[1]));
+            for (var i = 0; i < len; i++) {
+              //对菜单中的视频遍历
+              if (targetid === menuJSONContent[i].id) {
+                res.send(JSON.stringify(menuJSONContent[i]));
 
+              }
+            }
+          }
+        })
+      }
+    })
+  } else if (urlParsed.pathname === '/like' || urlParsed.pathname === '/dislike') {
+    var json = {
+      state: ''
+    };
+
+    var queryId = urlParsed.query.split('=')[1];
+
+    fs.readFile('./json/menu.json', function (err, data) {
+      if (err) {
+        console.log(err);
+        res.send(json);
+      } else {
+        var cartjson = JSON.parse(data);
+        var content = cartjson.content;
+        var len = content.length;
+        for (var i = 0; i < len; i++) {
+          if (content[i].id == queryId) {
+            if (urlParsed.pathname === '/like') {
+              content[i].like = true;
+              break;
+            } else if (urlParsed.pathname === '/dislike') {
+              content[i].like = false;
+              break;
+            }
+          }
+        }
+
+        fs.writeFile('./json/menu.json', JSON.stringify(cartjson), (err) => {
+          if (err) {
+            console.log(err);
+            res.send(json);
+          } else {
+            res.send({
+              state: 'success'
+            });
+
+          }
+        });
+      }
+    })
   } else if (urlParsed.pathname === '/' || urlParsed.pathname === '/DEV') {
     fs.readFile('./html/onboarding.html', function (err, data) {
       if (err) {
@@ -230,31 +139,39 @@ router(function (req, res, next) {
   }
 })
 
+
+
 //↓ 购物车界面
 router('/cart/get', function (req, res) {
-  res.send(cart);
+  fs.readFile("./json/cart.json", function (err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log(data);
+      res.send(JSON.stringify(JSON.parse(data)));
+    }
+  })
 });
 
 router('/cart', function (req, res) {
   fs.readFile('./html/cart.html', function (err, data) {
-      if (err) {
-        res.send(err);
-      } else {
-        res.writeHead('200', {
-          'Content-Type': "text/html"
-        });
-        res.write(data);
-        res.end();
-      }
+    if (err) {
+      res.send(err);
+    } else {
+      res.writeHead('200', {
+        'Content-Type': "text/html"
+      });
+      res.write(data);
+      res.end();
     }
-  )
+  })
 })
 
 
 //接受'添加至购物车'的请求
 router('/addtocart', function (req, res) {
   var json = {
-    message: 'success'
+    state: 'success'
   };
   Date.prototype.today = function () {
     return (this.getFullYear()) + '/' + (this.getMonth() + 1) + '/' + ((this.getDate() < 10) ? '0' : '') + this.getDate();
@@ -267,10 +184,26 @@ router('/addtocart', function (req, res) {
 
   var newDate = new Date();
   thisorder.time = newDate.today() + "-" + newDate.now();
-  cart.content.push(thisorder);
-  console.log(cart);
 
-  res.send(200, json);
+  fs.readFile('./json/cart.json', function (err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      var cartContent = JSON.parse(data);
+      cartContent.content.push(thisorder);
+      console.log(cartContent);
+      fs.writeFile('./json/cart.json', JSON.stringify(cartContent), 'utf8', (err) => {
+        if (err) {
+          fs.writeFile('./json/cart.json', data, 'utf8');
+          res.send(200, {
+            state: 'wrong'
+          })
+        }
+        res.send(200, json);
+      })
+    }
+  })
+
 });
 
 //↓ 在菜单界面中,响应"给我食物的数据"的请求的路由
@@ -281,20 +214,24 @@ router('/menu/getmenu', function (req, res) {
     content: []
   }
 
-  var foodNum = foodinfo.content.length;
+  fs.readFile('./json/menu.json', function (err, data) {
+    var foodinfo = JSON.parse(data);
+    var foodNum = foodinfo.content.length;
 
-  for (var i = 0; i < foodNum; i++) {
-    var oneFoodInfo = {
-      name: foodinfo.content[i].name,
-      basicPrice: foodinfo.content[i].basicPrice,
-      pic: foodinfo.content[i].pic,
-      id: foodinfo.content[i].id
-    };
-    jsonToReturn.content.push(oneFoodInfo);
-    console.log(i);
-  }
-  console.log(jsonToReturn);
-  res.send(jsonToReturn);
+    for (var i = 0; i < foodNum; i++) {
+      var oneFoodInfo = {
+        name: foodinfo.content[i].name,
+        basicPrice: foodinfo.content[i].basicPrice,
+        pic: foodinfo.content[i].pic,
+        id: foodinfo.content[i].id
+      };
+      jsonToReturn.content.push(oneFoodInfo);
+      console.log(i);
+    }
+    console.log(jsonToReturn);
+    res.send(jsonToReturn);
+  })
+
 })
 
 //↓ 在推荐界面中,响应"给我食物的数据"的请求的路由
@@ -304,25 +241,57 @@ router('/recommend/getreco', function (req, res) {
     type: 'foodcontent',
     content: []
   }
+  fs.readFile('./json/recommend.json', function (err, data) {
+    var recoFoodInfo = JSON.parse(data);
+    var recoFoodIDList = recoFoodInfo.content;
 
-  var foodNum = recoFoodInfo.content.length;
 
-  for (var i = 0; i < foodNum; i++) {
-    var oneFoodInfo = {
-      name: recoFoodInfo.content[i].name,
-      basicPrice: recoFoodInfo.content[i].basicPrice,
-      pic: recoFoodInfo.content[i].pic,
-      id: recoFoodInfo.content[i].id
-    };
-    jsonToReturn.content.push(oneFoodInfo);
-    console.log(i);
-  }
-  console.log(jsonToReturn);
-  res.send(jsonToReturn);
+    fs.readFile('./json/menu.json', function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var menuJSONContent = JSON.parse(data).content;
+        var len = menuJSONContent.length;
+
+        for (var i = 0; i < len; i++) {
+          //对菜单中的视频遍历
+          var propIndex = recoFoodIDList.indexOf(menuJSONContent[i].id);
+          if (propIndex >= 0) {
+            var oneFoodInfo = {
+              name: menuJSONContent[i].name,
+              basicPrice: menuJSONContent[i].basicPrice,
+              pic: menuJSONContent[i].pic,
+              id: menuJSONContent[i].id
+            };
+            jsonToReturn.content.push(oneFoodInfo);
+          }
+        }
+        res.send(jsonToReturn);
+      }
+
+    })
+
+
+
+    // var foodNum = recoFoodInfo.content.length;
+
+    // for (var i = 0; i < foodNum; i++) {
+    //   var oneFoodInfo = {
+    //     name: recoFoodInfo.content[i].name,
+    //     basicPrice: recoFoodInfo.content[i].basicPrice,
+    //     pic: recoFoodInfo.content[i].pic,
+    //     id: recoFoodInfo.content[i].id
+    //   };
+    //   jsonToReturn.content.push(oneFoodInfo);
+    //   console.log(i);
+    // }
+    // console.log(jsonToReturn);
+    // res.send(jsonToReturn);
+  })
 })
 
 //提供静态资源的路由
-router('/menu','/recommend', '/home', '/food_detail', '/onboarding', function (req, res) {
+router('/menu', '/recommend', '/home', '/food_detail', '/onboarding', function (req, res) {
   if (req.url.split('.')[1] == 'html') {
     var path = './html' + req.url;
   } else {

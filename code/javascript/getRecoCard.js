@@ -22,6 +22,8 @@ XHRforReco.send();
 function generRecoCard(contentObject) {
   //动态添加图片
   generPic(contentObject.pic, 'id="recommendImg"', 'a[href="/foodDetailPage"]');
+
+  document.querySelector('a[href="/foodDetailPage"]').href=`/foodDetailPage?id=${contentObject.id}`;
   //动态添加star&title
   generNameAndStar(contentObject.point, contentObject.name, 'id="recFoorTitle"', 'class="starGroup"',
     "#starAndNameCon");

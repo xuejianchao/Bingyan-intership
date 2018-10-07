@@ -8,9 +8,11 @@ function addHandlerToButton(buttonSelector, formSelector, foodNameSelector) {
     var XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
       if (XHR.readyState === 4 && XHR.status === 200) {
-        var message = JSON.parse(XHR.responseText).message;
-        if (message == 'success') {
+        var state = JSON.parse(XHR.responseText).state;
+        if (state == 'success') {
           alert('Add to cart Successfully');
+        } else {
+          alert("Some thing went wrong,your order is not added");
         }
       }
     }

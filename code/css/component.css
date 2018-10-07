@@ -6,6 +6,25 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+
+
+}
+
+@media screen and (min-width:767px) {
+  .boxGroup::-webkit-scrollbar {
+    width: 12px;
+    /* for vertical scrollbars */
+    height: 6px;
+    /* for horizontal scrollbars */
+  }
+
+  .boxGroup::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .boxGroup::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .outerBox {
@@ -72,6 +91,8 @@ input:unchecked+label {
 input:unchecked+label>span.formerLable {
   color: #ccc;
 }
+
+
 
 @media (min-width:768px) {
   .boxGroup {

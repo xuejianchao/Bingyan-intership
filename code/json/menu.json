@@ -1,0 +1,94 @@
+{
+  "type": "foodcontent",
+  "content": [{
+    "id": "1",
+    "like": false,
+    "name": "Veggie Cheese Extravaganza",
+    "pic": "../images/th(2).png",
+    "point": "2",
+    "descript": "For a vegetarian looking for a BIG treat that goes easy on the spices, this one's got it all. The onions, the capsicum, those delectable mushrooms - with paneer and golden corn to top it all.",
+    "basicPrice": 199,
+    "selection": {
+      "Size": [
+        ["Medium", 251, "₹450"],
+        ["Large", 791, "₹990"],
+        ["Small", 0, "₹199"]
+      ],
+      "Crust": [
+        ["Stanard", 0, ""],
+        ["Garlic Roasted", 0, "free"],
+        ["Cheese Burst", 0, "free"]
+      ],
+      "Topping": [
+        ["Stanard", 0, ""],
+        ["Extra Cheese", 0, "₹99"],
+        ["Extra Spice", 0, ""]
+      ]
+    }
+  }, {
+    "id": "2",
+    "like": false,
+    "name": "Paneer Pan Pizza",
+    "pic": "../images/pannerPizza.jpg",
+    "point": "5",
+    "descript": "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
+    "basicPrice": 199,
+    "selection": {
+      "Size": [
+        ["Medium", 251, "₹450"],
+        ["Large", 791, "₹990"],
+        ["Small", 0, "₹199"]
+      ],
+      "Crust": [
+        ["Stanard", 0, ""],
+        ["Garlic Roasted", 0, "free"],
+        ["Cheese Burst", 0, "free"]
+      ],
+      "Topping": [
+        ["Stanard", 0, ""],
+        ["Extra Cheese", 99, "₹99"],
+        ["Extra Spice", 0, ""]
+      ]
+    }
+  }, {
+    "id": "3",
+    "like": false,
+    "name": "Burger",
+    "pic": "../images/burger.jpg",
+    "point": "4",
+    "descript": "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
+    "basicPrice": 149,
+    "selection": {
+      "Size": [
+        ["Medium", 50, "₹199"],
+        ["Large", 150, "₹299"],
+        ["Small", 0, "₹149"]
+      ],
+      "Stuffing": [
+        ["Stanard", 0, ""],
+        ["Extra Cheese", 49, "₹49"],
+        ["Extra Meet", 0, ""]
+      ]
+    }
+  }, {
+    "id": "4",
+    "like": false,
+    "name": "Salad",
+    "pic": "../images/salad.jpg",
+    "point": "3",
+    "descript": "Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. ",
+    "basicPrice": 149,
+    "selection": {
+      "Size": [
+        ["Medium", 50, "₹199"],
+        ["Large", 150, "₹299"],
+        ["Small", 0, "₹149"]
+      ],
+      "Stuffing": [
+        ["Stanard", 0, ""],
+        ["Extra Cheese", 49, "₹49"],
+        ["Extra Meet", 0, ""]
+      ]
+    }
+  }]
+}
