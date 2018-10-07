@@ -1,9 +1,9 @@
-body{
+body {
   overflow-x: hidden;
-  width:3.75rem;
 }
+
 #showboard {
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
   padding-bottom: 128.46%;
   /* ↑用来占位,保证图片下面的内容不会窜上来 */
@@ -23,8 +23,8 @@ body{
   left: 0rem;
 }
 
-img{
-  position:absolute;
+img {
+  position: absolute;
 }
 
 ul li {
@@ -33,33 +33,33 @@ ul li {
 
 /* 用来移动图片的动画↓ */
 
-.toLeft{
-  animation:movetoLeft 0.5s ease 1 both;
+.toLeft {
+  animation: movetoLeft 0.5s ease 1 both;
 }
 
-@keyframes movetoLeft{
-  to{
-    transform: translate(-3.25rem,0);
+@keyframes movetoLeft {
+  to {
+    transform: translate(-3.25rem, 0);
   }
 }
 
-.toCenter{
-  animation:movetoCenter 0.5s ease 1 both;
+.toCenter {
+  animation: movetoCenter 0.5s ease 1 both;
 }
 
-@keyframes movetoCenter{
-  to{
-    transform: translate(0.2rem,0);
+@keyframes movetoCenter {
+  to {
+    transform: translate(0.2rem, 0);
   }
 }
 
-.toRight{
-  animation:movetoRight 0.5s ease 1 both;
+.toRight {
+  animation: movetoRight 0.5s ease 1 both;
 }
 
-@keyframes movetoRight{
-  to{
-    transform: translate(3.65rem,0);
+@keyframes movetoRight {
+  to {
+    transform: translate(3.65rem, 0);
   }
 }
 
@@ -68,13 +68,13 @@ ul li {
   font-size: 0.18rem;
   line-height: 0.05rem;
   letter-spacing: 0.1rem;
-  margin:.2rem auto .75rem;
+  margin: .2rem auto .75rem;
   text-align: center;
 }
 
-.titleUnderImg{
-  margin:.2rem auto .1rem;
-  text-align:center;
+.titleUnderImg {
+  margin: .2rem auto .1rem;
+  text-align: center;
 }
 
 .infoUnderImg {
@@ -84,12 +84,74 @@ ul li {
   text-align: center;
 }
 
+#right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 button {
   height: .3rem;
   width: 2.15rem;
-  margin: 0 .8rem;
 }
 
 #QQButton {
   margin-bottom: 15px;
+}
+
+@media screen and (min-width : 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: .2rem;
+    grid-column-gap: .4rem;
+    margin: 0 auto;
+  }
+
+  #left {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width:2.8rem;
+    margin: 0 auto;
+  }
+
+  #right {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    padding-top:.5rem;
+  }
+
+  #showboard{
+    width:100%;
+    padding-bottom: 3.45rem;
+  }
+
+  .pics{
+    width:2.39rem;
+  }
+
+  .pic {
+    width: 100%;
+    border-radius: 0.08rem;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+  }
+
+  .titleUnderImg{
+    margin-top:0.15rem;
+    margin-bottom:0.04rem;
+    font-size:.16rem;
+    line-height: .18rem;
+  }
+
+  .infoUnderImg {
+    font-size: 0.1rem;
+    line-height: 0.16rem;
+    margin: .04rem .2rem .1rem;
+  }
+
+  .points{
+    margin:.1rem auto 0;
+  }
 }
