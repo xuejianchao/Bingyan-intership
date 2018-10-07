@@ -2,7 +2,7 @@
 var XHR = new XMLHttpRequest();
 XHR.onreadystatechange = function () {
   if (XHR.readyState === 4 && XHR.status === 200) {
-    generAllMoudle(JSON.parse(XHR.responseText), '.menuGridContainer');
+    generAllMoudle(JSON.parse(XHR.responseText), '.menuGridContainer',3);
   }
 }
 XHR.open('get', '/menu/getmenu', true);

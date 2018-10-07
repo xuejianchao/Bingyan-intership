@@ -26,6 +26,7 @@ function addHandlerToButton(buttonSelector, formSelector, foodNameSelector) {
       info += '&' + pair[0] + '=' + pair[1];
     }
     info += '&' + 'foodtitle' + '=' + foodtitle;
+    info += `&id=${Math.floor(Math.random()*10000000000)}`
 
     XHR.open('get', 'addtocart?' + info, true);
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

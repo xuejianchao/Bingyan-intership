@@ -101,9 +101,11 @@ router(function (req, res, next) {
           if (content[i].id == queryId) {
             if (urlParsed.pathname === '/like') {
               content[i].like = true;
+              console.log(`${content[i].name} is liked`);
               break;
             } else if (urlParsed.pathname === '/dislike') {
               content[i].like = false;
+              console.log(`${content[i].name} is disliked`);
               break;
             }
           }
@@ -122,6 +124,36 @@ router(function (req, res, next) {
         });
       }
     })
+  } else if (urlParsed.pathname === '/deleteorder') {
+
+    fs.readFile('./json/cart.json', function (err, data) {
+      var json = {
+        state: ''
+      };
+      if (err) {
+        console.log(err);
+        res.send(json);
+      } else {
+        var cartJSON = JSON.parse(data);
+        var cartArray = cartJSON.content;
+        var queryOrderId = urlParsed.query.split('=')[1];
+
+        for (var i = 0; i < cartArray.length; i++) {
+          if (cartArray[i].id === queryOrderId) {
+            cartArray.splice(i, 1);
+            break;
+          }
+        }
+
+        fs.writeFile('./json/cart.json', JSON.stringify(cartJSON), 'utf8', (err) => {
+          res.send({
+            state: 'success'
+          });
+        })
+
+      }
+    })
+
   } else if (urlParsed.pathname === '/' || urlParsed.pathname === '/DEV') {
     fs.readFile('./html/onboarding.html', function (err, data) {
       if (err) {
@@ -180,6 +212,8 @@ router('/addtocart', function (req, res) {
     return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
   }
   console.log(req.query);
+
+  //有内置的方法,一下就解析成了
   var thisorder = JSON.parse(JSON.stringify(req.query));
 
   var newDate = new Date();
@@ -270,23 +304,6 @@ router('/recommend/getreco', function (req, res) {
       }
 
     })
-
-
-
-    // var foodNum = recoFoodInfo.content.length;
-
-    // for (var i = 0; i < foodNum; i++) {
-    //   var oneFoodInfo = {
-    //     name: recoFoodInfo.content[i].name,
-    //     basicPrice: recoFoodInfo.content[i].basicPrice,
-    //     pic: recoFoodInfo.content[i].pic,
-    //     id: recoFoodInfo.content[i].id
-    //   };
-    //   jsonToReturn.content.push(oneFoodInfo);
-    //   console.log(i);
-    // }
-    // console.log(jsonToReturn);
-    // res.send(jsonToReturn);
   })
 })
 

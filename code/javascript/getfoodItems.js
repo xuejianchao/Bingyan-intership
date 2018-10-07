@@ -1,15 +1,22 @@
 //然后放到界面上
-function generAllMoudle(json,selector) {
+function generAllMoudle(json, selector, limit) {
   var foodItemArray = json.content;
   var foodNum = foodItemArray.length;
-  for (var i = 0; i < foodNum; i++) {
-    generOneFood(foodItemArray[i],selector);
+
+  var foodNumOnthisPage = 0;
+  if (limit > 0 && limit < foodNum) {
+    foodNumOnthisPage = limit;
+  } else {
+    foodNumOnthisPage = foodNum;
+  }
+  for (var i = 0; i < foodNumOnthisPage; i++) {
+    generOneFood(foodItemArray[i], selector);
   }
 }
 
 
 //测试没有问题
-function generOneFood(onefoodjson,selector) {
+function generOneFood(onefoodjson, selector) {
   var appendSection = document.createElement('section');
   appendSection.classList.add('foodItem');
 

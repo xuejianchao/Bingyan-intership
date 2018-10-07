@@ -4,6 +4,7 @@ var blackheart = document.querySelector("#blackheart");
 function clickhandler(ev) {
   var clicked = ev.target;
   if (clicked === redheart) {
+    //注意,点击红心是取消喜欢的意思,所以后面应该写/dislike
     var XHR = new XMLHttpRequest();
     XHR.onreadystatechange = function () {
       if (XHR.readyState === 4 && XHR.status === 200) {
@@ -17,7 +18,7 @@ function clickhandler(ev) {
       }
     }
 
-    XHR.open('get', `/like?id=${foodid}`, true);
+    XHR.open('get', `/dislike?id=${foodid}`, true);
     XHR.send();
 
   } else {
@@ -33,7 +34,7 @@ function clickhandler(ev) {
         }
       }
     }
-    XHR.open('get', `/dislike?id=${foodid}`, true);
+    XHR.open('get', `/like?id=${foodid}`, true);
     XHR.send();
   }
 }
