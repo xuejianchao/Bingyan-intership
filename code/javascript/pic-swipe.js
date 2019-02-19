@@ -44,6 +44,7 @@ PicSlide.prototype.init = function () {
 
 PicSlide.prototype.bindEvents = function () {
   var self = this;
+  //箭头函数 ↑
   window.addEventListener('resize orientationchange', this.resize.bind(this), false);
   'touchstart touchmove touchend touchcancel'.split(' ').forEach(function (evn) {
     //将四个触控函数（申明在后面）绑定到每个页面
@@ -149,7 +150,7 @@ PicSlide.prototype.touchend = function (ev) {
   if (!this.flag) return;
   ev.preventDefault();
 
-  //滑动结束前往下一页面,next()方法调用了go()方法
+  //滑动结束前往下一页面
   if (move < -minRange && next) {
     return this.next()
   } else if (move > minRange && prev) {

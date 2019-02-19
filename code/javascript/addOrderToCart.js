@@ -20,16 +20,21 @@ function addHandlerToButton(buttonSelector, formSelector, foodNameSelector) {
     //如果页面中只有一个form的话,这个
     var formData = new FormData(document.querySelector(formSelector));
     //↓ 制造送给后台的数据
-    var info = '';
+    //var info = '';
     var foodtitle = document.querySelector(foodNameSelector).innerHTML;
-    for (var pair of formData.entries()) {
-      info += '&' + pair[0] + '=' + pair[1];
-    }
-    info += '&' + 'foodtitle' + '=' + foodtitle;
-    info += `&id=${Math.floor(Math.random()*10000000000)}`
+    
+    // for (var pair of formData.entries()) {
+    //   info += '&' + pair[0] + '=' + pair[1];
+    // }
+    // info += '&' + 'foodtitle' + '=' + foodtitle;
+    // info += `&id=${Math.floor(Math.random()*10000000000)}`
 
-    XHR.open('get', 'addtocart?' + info, true);
-    XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    XHR.send();
+    // XHR.open('get', 'addtocart?' + info, true);
+    // XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // XHR.send();
+
+    formData.append("foodtitle",foodtitle);
+    XHR.open("POST","addtocart",true);
+    XHR.send(formData);
   })
 }

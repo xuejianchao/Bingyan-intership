@@ -1,4 +1,6 @@
-//然后放到界面上
+//下面的两个函数用在home和menu上.
+//从后台获取很多食物的详细信息,然后放在页面上
+
 function generAllMoudle(json, selector, limit) {
   var foodItemArray = json.content;
   var foodNum = foodItemArray.length;

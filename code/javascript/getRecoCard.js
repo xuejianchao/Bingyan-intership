@@ -9,7 +9,7 @@ XHR.open('get', '/menu/getmenu', true);
 XHR.send();
 
 
-//获取第一个推荐食品
+//获取第一个推荐食品,生成recommendCard
 var XHRforReco = new XMLHttpRequest();
 XHRforReco.onreadystatechange = function () {
   if (XHRforReco.readyState === 4 && XHRforReco.status === 200) {

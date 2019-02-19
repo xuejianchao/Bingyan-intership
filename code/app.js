@@ -206,10 +206,12 @@ router('/addtocart', function (req, res) {
     state: 'success'
   };
   Date.prototype.today = function () {
-    return (this.getFullYear()) + '/' + (this.getMonth() + 1) + '/' + ((this.getDate() < 10) ? '0' : '') + this.getDate();
+    //return (this.getFullYear()) + '/' + (this.getMonth() + 1) + '/' + ((this.getDate() < 10) ? '0' : '') + this.getDate();
+    return `${this.getFullYear()}/${this.getMonth() + 1}/${(this.getDate() < 10) ? '0' : ''}${this.getDate()}`;
   }
   Date.prototype.now = function () {
-    return (this.getHours() < 10 ? '0' : '') + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
+    //return this.getHours() < 10 ? '0' : '' + this.getHours() + ':' + (this.getMinutes() < 10 ? '0' : '') + this.getMinutes() + ':' + ((this.getSeconds() < 10) ? "0" : "") + this.getSeconds();
+    return `${this.getHours() < 10 ? '0' : ''}${this.getHours()}:${this.getMinutes() < 10 ? '0' : ''}${this.getMinutes()}:${(this.getSeconds() < 10) ? "0" : ""}${this.getSeconds()}`;
   }
   console.log(req.query);
 
